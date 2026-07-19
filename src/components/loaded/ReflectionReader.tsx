@@ -124,6 +124,51 @@ export function ReflectionReader({
     }
   };
 
+  const renderReadingModeControl = (className: string) => (
+    <div
+      aria-label="Reading mode"
+      className={clsx(
+        "min-h-[3.25rem] items-center rounded-sm border p-1 sm:min-h-11",
+        isLightMode
+          ? "border-[#cdbd99] bg-[#fffaf0]/65"
+          : "border-white/15 bg-white/[0.035]",
+        className
+      )}
+      role="group"
+    >
+      <button
+        aria-pressed={readingMode === "dark"}
+        className={clsx(
+          "focus-ring inline-flex min-h-11 items-center gap-1.5 rounded-sm px-2.5 text-sm font-semibold transition-colors duration-200 sm:min-h-9",
+          readingMode === "dark"
+            ? "bg-gold text-black"
+            : isLightMode
+              ? "text-[#5b6370] hover:text-[#78540f]"
+              : "text-ink/65 hover:text-gold"
+        )}
+        onClick={() => updateReadingMode("dark")}
+        type="button"
+      >
+        <Moon aria-hidden size={14} />
+        Dark
+      </button>
+      <button
+        aria-pressed={readingMode === "light"}
+        className={clsx(
+          "focus-ring inline-flex min-h-11 items-center gap-1.5 rounded-sm px-2.5 text-sm font-semibold transition-colors duration-200 sm:min-h-9",
+          readingMode === "light"
+            ? "bg-[#b48327] text-[#fffaf0]"
+            : "text-ink/65 hover:text-gold"
+        )}
+        onClick={() => updateReadingMode("light")}
+        type="button"
+      >
+        <Sun aria-hidden size={14} />
+        Light
+      </button>
+    </div>
+  );
+
   const navigateChapter = (direction: -1 | 1) => {
     const nextChapter = wisdomChapters[activeChapterIndex + direction];
 
@@ -156,7 +201,7 @@ export function ReflectionReader({
               : "border-white/[0.08] bg-background/90"
           )}
         >
-          <div className="mx-auto flex min-h-16 max-w-6xl flex-wrap items-center justify-between gap-3 px-5 py-3 sm:px-6 lg:px-8">
+          <div className="mx-auto flex min-h-[3.75rem] max-w-6xl flex-nowrap items-center justify-between gap-2 px-4 py-2 sm:min-h-16 sm:gap-3 sm:px-6 sm:py-3 lg:px-8">
             <button
               className={clsx("group", quietButtonClassName)}
               onClick={onClose}
@@ -171,48 +216,8 @@ export function ReflectionReader({
               Back to companion
             </button>
 
-            <div className="flex flex-wrap items-center justify-end gap-2">
-              <div
-                aria-label="Reading mode"
-                className={clsx(
-                  "flex min-h-11 items-center rounded-sm border p-1",
-                  isLightMode
-                    ? "border-[#cdbd99] bg-[#fffaf0]/65"
-                    : "border-white/15 bg-white/[0.035]"
-                )}
-                role="group"
-              >
-                <button
-                  aria-pressed={readingMode === "dark"}
-                  className={clsx(
-                    "focus-ring inline-flex min-h-9 items-center gap-1.5 rounded-sm px-2.5 text-sm font-semibold transition-colors duration-200",
-                    readingMode === "dark"
-                      ? "bg-gold text-black"
-                      : isLightMode
-                        ? "text-[#5b6370] hover:text-[#78540f]"
-                        : "text-ink/65 hover:text-gold"
-                  )}
-                  onClick={() => updateReadingMode("dark")}
-                  type="button"
-                >
-                  <Moon aria-hidden size={14} />
-                  Dark
-                </button>
-                <button
-                  aria-pressed={readingMode === "light"}
-                  className={clsx(
-                    "focus-ring inline-flex min-h-9 items-center gap-1.5 rounded-sm px-2.5 text-sm font-semibold transition-colors duration-200",
-                    readingMode === "light"
-                      ? "bg-[#b48327] text-[#fffaf0]"
-                      : "text-ink/65 hover:text-gold"
-                  )}
-                  onClick={() => updateReadingMode("light")}
-                  type="button"
-                >
-                  <Sun aria-hidden size={14} />
-                  Light
-                </button>
-              </div>
+            <div className="flex flex-nowrap items-center justify-end gap-2">
+              {renderReadingModeControl("hidden sm:flex")}
 
               <button
                 aria-label="Previous reflection"
@@ -242,24 +247,27 @@ export function ReflectionReader({
               isLightMode ? "border-[#d7c7a4]/75" : "border-white/[0.07]"
             )}
           >
-            <p className="mx-auto flex min-h-11 max-w-6xl items-center gap-2 px-5 py-2 text-sm font-semibold sm:px-6 sm:text-base lg:px-8">
-              <span
-                className={isLightMode ? "text-[#8a6112]" : "text-gold"}
-              >
-                Chapter {activeChapter.id}
-              </span>
-              <span
-                aria-hidden
-                className={isLightMode ? "text-[#756b59]" : "text-ink/40"}
-              >
-                —
-              </span>
-              <span className="min-w-0 truncate">{activeChapter.title}</span>
-            </p>
+            <div className="mx-auto flex min-h-14 max-w-6xl items-center gap-2 px-4 py-1.5 sm:min-h-11 sm:px-6 sm:py-0 lg:px-8">
+              <p className="flex min-w-0 flex-1 items-center gap-2 text-[0.8125rem] font-semibold sm:text-base">
+                <span
+                  className={isLightMode ? "text-[#8a6112]" : "text-gold"}
+                >
+                  Chapter {activeChapter.id}
+                </span>
+                <span
+                  aria-hidden
+                  className={isLightMode ? "text-[#756b59]" : "text-ink/40"}
+                >
+                  —
+                </span>
+                <span className="min-w-0 truncate">{activeChapter.title}</span>
+              </p>
+              {renderReadingModeControl("flex shrink-0 sm:hidden")}
+            </div>
           </div>
         </header>
 
-        <main className="mx-auto w-full max-w-5xl px-5 py-10 sm:px-6 sm:py-14 lg:px-8 lg:py-16">
+        <main className="mx-auto w-full max-w-5xl px-4 py-7 sm:px-6 sm:py-14 lg:px-8 lg:py-16">
           <div className="flex flex-wrap items-center gap-2 text-[0.9375rem] font-semibold leading-6">
             <span className={isLightMode ? "text-[#8a6112]" : "text-gold"}>
               Chapter {activeChapter.id}
@@ -272,7 +280,7 @@ export function ReflectionReader({
             </span>
           </div>
           <h2
-            className="mt-5 max-w-4xl text-balance text-4xl font-semibold leading-tight tracking-[-0.045em] sm:text-5xl lg:text-6xl"
+            className="mt-4 max-w-4xl text-balance text-3xl font-semibold leading-tight tracking-[-0.045em] sm:mt-5 sm:text-5xl lg:text-6xl"
             id="reflection-reader-title"
           >
             {activeChapter.title}
@@ -280,7 +288,7 @@ export function ReflectionReader({
 
           <div
             className={clsx(
-              "mt-7 inline-flex max-w-full items-center gap-5 rounded-sm border px-4 py-3 shadow-[0_14px_36px_rgba(0,0,0,0.08)]",
+              "mt-6 flex w-full max-w-full items-center justify-between gap-3 rounded-sm border px-4 py-3 shadow-[0_14px_36px_rgba(0,0,0,0.08)] sm:mt-7 sm:inline-flex sm:w-auto sm:justify-start sm:gap-5",
               isLightMode
                 ? "border-[#cdb878] bg-[#fff8e9]"
                 : "border-gold/30 bg-gold/[0.055]"
@@ -316,7 +324,7 @@ export function ReflectionReader({
 
           <article
             className={clsx(
-              "mt-9 rounded-sm border p-6 transition-colors duration-200 sm:p-8 lg:p-10",
+              "mt-7 rounded-sm border p-5 transition-colors duration-200 sm:mt-9 sm:p-8 lg:p-10",
               isLightMode
                 ? "border-[#d8c9a7] bg-[#fffaf0] shadow-[0_24px_70px_rgba(73,55,20,0.08)]"
                 : "v2-panel-surface border-white/[0.08]"

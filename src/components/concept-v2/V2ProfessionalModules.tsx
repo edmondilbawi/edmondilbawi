@@ -18,13 +18,13 @@ export function V2ProfessionalModules() {
 
   return (
     <section
-      className="v2-section-surface relative z-10 scroll-mt-16 overflow-hidden py-16 sm:py-20 lg:py-28"
+      className="v2-section-surface relative z-10 scroll-mt-16 overflow-hidden py-12 sm:py-20 lg:py-28"
       id="v2-about"
     >
       <div className="pointer-events-none absolute inset-0 bg-subtle-grid bg-[length:68px_68px] opacity-[0.07]" />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(212,175,55,0.065),transparent_29%)]" />
       <div className="relative z-10 mx-auto w-full max-w-[94rem] px-5 sm:px-6 lg:px-10">
-        <div className="grid items-start gap-12 lg:grid-cols-[14rem_minmax(0,1fr)] lg:gap-12 xl:grid-cols-[15rem_minmax(0,1fr)] xl:gap-14">
+        <div className="grid items-start gap-8 sm:gap-12 lg:grid-cols-[14rem_minmax(0,1fr)] lg:gap-12 xl:grid-cols-[15rem_minmax(0,1fr)] xl:gap-14">
           <aside className="lg:sticky lg:top-28 lg:h-fit">
             <h2 className="text-4xl font-semibold tracking-[-0.04em] sm:text-5xl lg:text-[2.8rem] xl:text-5xl">
               {t.about.title}
@@ -32,7 +32,7 @@ export function V2ProfessionalModules() {
                 <span className="block text-muted">{t.about.titleAccent}</span>
               ) : null}
             </h2>
-            <p className="mt-6 max-w-xs text-sm leading-7 text-muted">
+            <p className="mt-4 max-w-xs text-sm leading-7 text-muted sm:mt-6">
               {t.about.subtitle}
             </p>
             <div className="mt-10 hidden max-w-[11rem] items-center gap-3 lg:flex">
@@ -43,7 +43,7 @@ export function V2ProfessionalModules() {
 
           <div className="grid items-start gap-5 xl:grid-cols-12 xl:gap-6">
             <motion.article
-              className="v2-panel-surface relative self-start overflow-hidden rounded-sm border-gold/20 p-6 sm:p-8 xl:col-span-7"
+              className="v2-panel-surface relative self-start overflow-hidden rounded-sm border-gold/20 p-5 sm:p-8 xl:col-span-7"
               initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}
               transition={{ duration: 0.52 }}
               viewport={{ amount: 0.25, once: true }}
@@ -55,15 +55,15 @@ export function V2ProfessionalModules() {
                   {t.about.perspective}
                 </span>
               </div>
-              <h3 className="mt-5 max-w-2xl text-balance text-3xl font-semibold leading-tight tracking-[-0.03em] sm:text-[2.15rem]">
+              <h3 className="mt-4 max-w-2xl text-balance text-3xl font-semibold leading-tight tracking-[-0.03em] sm:mt-5 sm:text-[2.15rem]">
                 {t.about.heading}
               </h3>
-              <div className="mt-6 grid gap-5 text-sm leading-7 text-muted sm:grid-cols-2 sm:text-base">
+              <div className="mt-5 grid gap-4 text-sm leading-7 text-muted sm:mt-6 sm:grid-cols-2 sm:gap-5 sm:text-base">
                 {t.about.paragraphs.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
                 ))}
               </div>
-              <div className="mt-7 flex flex-wrap gap-1.5 border-t border-white/[0.06] pt-5">
+              <div className="mt-6 flex flex-wrap gap-1.5 border-t border-white/[0.06] pt-4 sm:mt-7 sm:pt-5">
                 {t.about.tags.map((value) => (
                   <span
                     className="rounded-full border border-white/[0.08] bg-black/10 px-2.5 py-1 text-[10px] font-medium text-muted transition-colors duration-200 hover:border-gold/25 hover:text-ink"
@@ -90,7 +90,7 @@ export function V2ProfessionalModules() {
               </header>
               {educationEntries.map((entry, index) => (
                 <article
-                  className="v2-card-surface group relative overflow-hidden rounded-sm p-6 transition-all duration-200 hover:border-gold/35"
+                  className="v2-card-surface group relative overflow-hidden rounded-sm p-5 transition-all duration-200 hover:border-gold/35 sm:p-6"
                   key={entry.institution}
                 >
                   <div className="absolute right-0 top-0 h-full w-px bg-gradient-to-b from-gold/50 via-transparent to-transparent" />
@@ -120,7 +120,7 @@ export function V2ProfessionalModules() {
             </motion.div>
 
             <motion.article
-              className="v2-panel-surface relative scroll-mt-24 overflow-hidden rounded-sm border-t-gold/25 p-6 sm:p-8 xl:col-span-12"
+              className="v2-panel-surface relative scroll-mt-24 overflow-hidden rounded-sm border-t-gold/25 p-5 sm:p-8 xl:col-span-12"
               id="v2-skills"
               initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}
               transition={{ duration: 0.52 }}
@@ -154,7 +154,7 @@ export function V2ProfessionalModules() {
 
                   return (
                     <div
-                      className="group rounded-sm border border-white/[0.075] bg-black/15 p-5 transition-all duration-200 hover:-translate-y-1 hover:border-gold/30 hover:bg-gold/[0.025]"
+                      className="group rounded-sm border border-white/[0.075] bg-black/15 p-4 transition-all duration-200 hover:-translate-y-1 hover:border-gold/30 hover:bg-gold/[0.025] sm:p-5"
                       key={category.category}
                     >
                       <div className="flex items-center gap-3">
@@ -162,7 +162,7 @@ export function V2ProfessionalModules() {
                           <Icon aria-hidden size={17} />
                         </span>
                       </div>
-                      <h4 className="mt-5 min-h-12 text-base font-semibold leading-6 text-ink">
+                      <h4 className="mt-4 text-base font-semibold leading-6 text-ink sm:mt-5 sm:min-h-12">
                         {t.skills.groups[index]}
                       </h4>
                       <div className="mt-4 flex flex-wrap gap-2">

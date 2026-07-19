@@ -13,7 +13,7 @@ function SystemPreview({ project }: { project: Project }) {
   return (
     <div
       aria-label={`${t.projects.preview}: ${project.title}`}
-      className="relative min-h-44 overflow-hidden border-b border-line bg-black/35 sm:min-h-48"
+      className="relative min-h-40 overflow-hidden border-b border-line bg-black/35 sm:min-h-48"
       role="img"
     >
       <div className="absolute inset-0 bg-subtle-grid bg-[length:30px_30px] opacity-[0.13]" />
@@ -87,12 +87,12 @@ export function V2ProjectCaseFiles() {
 
   return (
     <section
-      className="v2-section-surface relative z-10 scroll-mt-16 overflow-hidden py-16 sm:py-20 lg:py-24"
+      className="v2-section-surface relative z-10 scroll-mt-16 overflow-hidden py-12 sm:py-20 lg:py-24"
       id="v2-projects"
     >
       <div className="pointer-events-none absolute -right-36 top-12 h-96 w-96 rounded-full bg-gold/[0.045] blur-3xl" />
       <div className="relative z-10 mx-auto w-full max-w-[90rem] px-5 sm:px-6 lg:px-10">
-        <header className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+        <header className="flex flex-col gap-4 sm:gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div>
             <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.24em] text-gold">
               {t.projects.eyebrow}
@@ -106,7 +106,7 @@ export function V2ProjectCaseFiles() {
           </p>
         </header>
 
-        <div className="mt-10 grid gap-5 lg:grid-cols-2">
+        <div className="mt-8 grid gap-5 sm:mt-10 lg:grid-cols-2">
           {projects.map((project, index) => (
             <motion.article
               className="v2-panel-surface group overflow-hidden rounded-sm transition-all duration-200 hover:-translate-y-1 hover:border-gold/35 hover:shadow-gold-soft"
@@ -122,7 +122,7 @@ export function V2ProjectCaseFiles() {
             >
               <SystemPreview project={project} />
 
-              <div className="p-5 sm:p-6">
+              <div className="p-4 sm:p-6">
                 <div className="flex flex-wrap items-center justify-between gap-3">
                   <p className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-gold">
                     {t.projects.project} / 0{index + 1}
@@ -146,7 +146,7 @@ export function V2ProjectCaseFiles() {
                   {project.description}
                 </p>
 
-                <div className="mt-5 grid gap-5 border-y border-line py-5 md:grid-cols-[0.72fr_1.28fr]">
+                <div className="mt-4 grid gap-4 border-y border-line py-4 sm:mt-5 sm:gap-5 sm:py-5 md:grid-cols-[0.72fr_1.28fr]">
                   <div>
                     <p className="font-mono text-[9px] font-bold uppercase tracking-[0.2em] text-gold">
                       {t.projects.technologies}
@@ -190,7 +190,7 @@ export function V2ProjectCaseFiles() {
 
                 <div
                   aria-disabled="true"
-                  className="mt-4 flex items-center justify-between gap-4 rounded-sm border border-dashed border-white/10 bg-black/20 px-3 py-2.5 font-mono text-[9px] uppercase tracking-[0.16em] text-muted"
+                  className="mt-4 flex flex-wrap items-center justify-between gap-2 rounded-sm border border-dashed border-white/10 bg-black/20 px-3 py-2.5 font-mono text-[10px] uppercase tracking-[0.13em] text-muted sm:gap-4 sm:text-[9px] sm:tracking-[0.16em]"
                 >
                   <span>{t.projects.source}</span>
                   <span className="text-gold/75">

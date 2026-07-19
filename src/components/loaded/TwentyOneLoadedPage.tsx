@@ -429,7 +429,7 @@ export function TwentyOneLoadedPage() {
       <header className="fixed inset-x-0 top-0 z-40 border-b border-white/[0.07] bg-background/85 backdrop-blur-xl">
         <div className="mx-auto flex min-h-16 w-full max-w-[96rem] items-center justify-between gap-2 px-5 sm:gap-4 sm:px-6 lg:min-h-[5.25rem] lg:px-8">
           <Link
-            className="focus-ring group flex shrink-0 items-center gap-3 rounded-sm sm:gap-4"
+            className="focus-ring group flex min-h-11 shrink-0 items-center gap-3 rounded-sm sm:gap-4"
             href="/"
           >
             <span className="status-pulse h-2.5 w-2.5 rounded-full bg-gold" />
@@ -458,7 +458,7 @@ export function TwentyOneLoadedPage() {
         </div>
       </header>
 
-      <main className="relative isolate overflow-hidden pb-16 pt-28 sm:pb-20 sm:pt-32 lg:pb-24 lg:pt-36">
+      <main className="relative isolate overflow-hidden pb-12 pt-24 sm:pb-20 sm:pt-32 lg:pb-24 lg:pt-36">
         <div className="pointer-events-none absolute inset-0 -z-20 bg-[radial-gradient(ellipse_at_50%_4%,rgba(212,175,55,0.13),transparent_28%),radial-gradient(ellipse_at_92%_52%,rgba(212,175,55,0.07),transparent_24%),radial-gradient(ellipse_at_8%_84%,rgba(212,175,55,0.055),transparent_22%)]" />
         <div className="pointer-events-none absolute inset-0 -z-20 bg-subtle-grid bg-[length:68px_68px] opacity-[0.04] [mask-image:linear-gradient(to_bottom,black,transparent_88%)]" />
         <svg
@@ -493,7 +493,7 @@ export function TwentyOneLoadedPage() {
           />
         </svg>
 
-        <div className="relative z-10 mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <section
             aria-labelledby="wisdom-bar-title"
             className="mx-auto max-w-5xl text-center"
@@ -542,10 +542,14 @@ export function TwentyOneLoadedPage() {
                   <span>Five roots</span>
                   <span>Twenty-one reflections</span>
                 </div>
-                <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-5">
-                  {ROOTS.map((root) => (
+                <div className="grid grid-cols-2 gap-2 sm:grid-cols-2 lg:grid-cols-5">
+                  {ROOTS.map((root, index) => (
                     <span
-                      className="inline-flex min-h-11 items-center justify-center rounded-full border border-gold/25 bg-gold/[0.05] px-4 py-2 text-center text-[0.9375rem] font-medium text-gold"
+                      className={`inline-flex min-h-11 items-center justify-center rounded-full border border-gold/25 bg-gold/[0.05] px-3 py-2 text-center text-sm font-medium text-gold sm:px-4 sm:text-[0.9375rem] ${
+                        index === ROOTS.length - 1
+                          ? "col-span-2 sm:col-span-1"
+                          : ""
+                      }`}
                       key={root}
                     >
                       {WISDOM_ROOT_LABELS[root]}
@@ -556,10 +560,10 @@ export function TwentyOneLoadedPage() {
             </div>
           </section>
 
-          <div className="mx-auto mt-14 max-w-6xl space-y-8 sm:mt-16 sm:space-y-10">
+          <div className="mx-auto mt-12 max-w-6xl space-y-7 sm:mt-16 sm:space-y-10">
             <section
               aria-labelledby="companion-title"
-              className="v2-panel-surface relative overflow-hidden rounded-sm border-gold/30 p-5 shadow-[0_24px_90px_rgba(0,0,0,0.42),0_0_55px_rgba(212,175,55,0.07)] sm:p-8 lg:p-10"
+              className="v2-panel-surface relative overflow-hidden rounded-sm border-gold/30 p-4 shadow-[0_24px_90px_rgba(0,0,0,0.42),0_0_55px_rgba(212,175,55,0.07)] sm:p-8 lg:p-10"
               id="companion"
             >
               <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/70 to-transparent" />
@@ -653,7 +657,7 @@ export function TwentyOneLoadedPage() {
                     {chapterIntroVisible ? (
                     <motion.div
                       animate={{ opacity: 1, y: 0 }}
-                      className="relative max-w-[96%] overflow-hidden rounded-sm border border-gold/20 bg-gold/[0.035] p-4 pl-5 text-base leading-7 text-ink/90 sm:max-w-[92%] sm:p-5 sm:pl-6"
+                      className="relative max-w-full overflow-hidden rounded-sm border border-gold/20 bg-gold/[0.035] p-4 pl-5 text-base leading-7 text-ink/90 sm:max-w-[92%] sm:p-5 sm:pl-6"
                       initial={
                         prefersReducedMotion ? false : { opacity: 0, y: 8 }
                       }
@@ -703,7 +707,7 @@ export function TwentyOneLoadedPage() {
                           );
                         })}
                       </div>
-                      <div className="mt-6 max-h-[34rem] overflow-y-auto rounded-sm border border-white/[0.1] bg-black/25 p-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.02)] sm:p-4">
+                      <div className="mt-5 max-h-[28rem] overflow-y-auto rounded-sm border border-white/[0.1] bg-black/25 p-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.02)] sm:mt-6 sm:max-h-[34rem] sm:p-4">
                         <motion.ol
                           animate={{ opacity: 1, y: 0 }}
                           className="grid gap-2 sm:grid-cols-2 sm:gap-3"
@@ -890,7 +894,7 @@ export function TwentyOneLoadedPage() {
                       ? "Choose another chapter number or title"
                       : "Enter a chapter number or title"}
                 </label>
-                <div className="flex min-w-0 items-center gap-2 rounded-sm border border-white/15 bg-black/45 p-2 transition-colors duration-200 focus-within:border-gold/55">
+                <div className="flex min-w-0 flex-col items-stretch gap-2 rounded-sm border border-white/15 bg-black/45 p-2 transition-colors duration-200 focus-within:border-gold/55 sm:flex-row sm:items-center">
                   <input
                     aria-describedby={
                       chatStep === "name"
@@ -898,7 +902,7 @@ export function TwentyOneLoadedPage() {
                         : "companion-status"
                     }
                     autoComplete={chatStep === "name" ? "name" : "off"}
-                    className="min-h-11 min-w-0 flex-1 bg-transparent px-2 text-base text-ink outline-none placeholder:text-ink/60"
+                    className="min-h-11 w-full min-w-0 flex-1 bg-transparent px-2 text-base text-ink outline-none placeholder:text-ink/60"
                     disabled={isAssistantProcessing}
                     id="companion-input"
                     key={
@@ -933,7 +937,7 @@ export function TwentyOneLoadedPage() {
                   />
                   <button
                     aria-label="Send to Edmond’s Assistant"
-                    className="focus-ring group inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-sm border border-gold/55 bg-gold/[0.11] px-4 text-base font-semibold text-gold transition-all duration-200 hover:bg-gold hover:text-black disabled:cursor-not-allowed disabled:opacity-40"
+                    className="focus-ring group inline-flex min-h-11 w-full shrink-0 items-center justify-center gap-2 rounded-sm border border-gold/55 bg-gold/[0.11] px-4 text-base font-semibold text-gold transition-all duration-200 hover:bg-gold hover:text-black disabled:cursor-not-allowed disabled:opacity-40 sm:w-auto"
                     disabled={!chatInput.trim() || isAssistantProcessing}
                     type="submit"
                   >
@@ -968,7 +972,7 @@ export function TwentyOneLoadedPage() {
 
             <section
               aria-labelledby="contact-question-title"
-              className="v2-panel-surface relative mx-auto max-w-3xl overflow-hidden rounded-sm border-gold/30 p-6 shadow-[0_22px_70px_rgba(0,0,0,0.3),0_0_38px_rgba(212,175,55,0.04)] sm:p-8"
+              className="v2-panel-surface relative mx-auto max-w-3xl overflow-hidden rounded-sm border-gold/30 p-5 shadow-[0_22px_70px_rgba(0,0,0,0.3),0_0_38px_rgba(212,175,55,0.04)] sm:p-8"
               id="reach-out"
             >
                 <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/55 to-transparent" />

@@ -28,12 +28,12 @@ export function V2ExperienceLogs() {
 
   return (
     <section
-      className="v2-section-surface relative z-10 scroll-mt-24 overflow-hidden py-16 sm:py-20 lg:py-24"
+      className="v2-section-surface relative z-10 scroll-mt-24 overflow-hidden py-12 sm:py-20 lg:py-24"
       id="v2-experience"
     >
       <div className="pointer-events-none absolute inset-y-0 left-[12%] hidden w-px bg-gradient-to-b from-transparent via-gold/15 to-transparent lg:block" />
       <div className="relative z-10 mx-auto w-full max-w-[88rem] px-5 sm:px-6 lg:px-10">
-        <div className="grid gap-10 lg:grid-cols-[0.62fr_1.38fr] lg:gap-12">
+        <div className="grid gap-8 sm:gap-10 lg:grid-cols-[0.62fr_1.38fr] lg:gap-12">
           <motion.header
             className="v2-experience-heading-motion lg:sticky lg:top-28 lg:h-fit"
             initial={shouldReduceMotion ? false : { opacity: 0, x: -24 }}
@@ -62,7 +62,7 @@ export function V2ExperienceLogs() {
             </div>
           </motion.header>
 
-          <div className="relative pl-7 sm:pl-10">
+          <div className="relative pl-6 sm:pl-10">
             <div
               aria-hidden
               className="absolute bottom-24 left-1 top-5 w-px bg-gradient-to-b from-gold/75 via-gold/35 to-transparent sm:left-2"
@@ -71,7 +71,7 @@ export function V2ExperienceLogs() {
             <div className="space-y-5">
               {primaryEntries.map((entry, index) => (
                 <motion.article
-                  className="v2-card-surface group relative rounded-sm p-5 transition-all duration-200 hover:-translate-y-1 hover:border-gold/35 sm:p-6"
+                  className="v2-card-surface group relative rounded-sm p-4 transition-all duration-200 hover:-translate-y-1 hover:border-gold/35 sm:p-6"
                   initial={shouldReduceMotion ? false : { opacity: 0, x: 24 }}
                   key={entry.organization}
                   transition={{ delay: index * 0.08, duration: 0.5 }}
@@ -80,7 +80,7 @@ export function V2ExperienceLogs() {
                 >
                   <span
                     aria-hidden
-                    className="absolute -left-[1.9rem] top-7 h-3 w-3 rounded-full border-2 border-gold bg-background shadow-gold-soft sm:-left-[2.72rem]"
+                    className="absolute -left-[1.65rem] top-7 h-3 w-3 rounded-full border-2 border-gold bg-background shadow-gold-soft sm:-left-[2.72rem]"
                   />
                   <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                     <div>

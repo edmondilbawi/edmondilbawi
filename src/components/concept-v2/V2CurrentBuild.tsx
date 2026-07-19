@@ -35,7 +35,7 @@ export function V2CurrentBuild() {
 
   return (
     <section
-      className="v2-section-surface relative z-10 scroll-mt-16 overflow-hidden py-16 sm:py-20 lg:py-24"
+      className="v2-section-surface relative z-10 scroll-mt-16 overflow-hidden py-12 sm:py-20 lg:py-24"
       id="v2-current-build"
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_78%_28%,rgba(212,175,55,0.075),transparent_30%)]" />
@@ -53,14 +53,14 @@ export function V2CurrentBuild() {
           <span className="mt-6 block h-px w-32 bg-gradient-to-r from-gold/65 to-transparent" />
         </motion.header>
 
-        <div className="mt-9 grid gap-4 lg:grid-cols-12">
+        <div className="mt-8 grid gap-4 sm:mt-9 lg:grid-cols-12">
           {areaVisuals.map((area, index) => {
             const Icon = area.icon;
             const copy = t.currentFocus.areas[index];
 
             return (
               <motion.article
-                className={`v2-card-surface group relative flex h-full min-h-56 flex-col overflow-hidden rounded-sm p-5 transition-all duration-200 hover:-translate-y-1 hover:border-gold/40 hover:shadow-gold-soft sm:p-6 ${area.layout}`}
+                className={`v2-card-surface group relative flex h-full min-h-[11.5rem] flex-col overflow-hidden rounded-sm p-5 transition-all duration-200 hover:-translate-y-1 hover:border-gold/40 hover:shadow-gold-soft sm:min-h-56 sm:p-6 ${area.layout}`}
                 initial={
                   shouldReduceMotion
                     ? false
@@ -77,10 +77,10 @@ export function V2CurrentBuild() {
                     <Icon aria-hidden size={19} />
                   </span>
                 </div>
-                <h3 className="relative mt-6 text-2xl font-semibold tracking-[-0.02em] text-ink">
+                <h3 className="relative mt-5 text-2xl font-semibold tracking-[-0.02em] text-ink sm:mt-6">
                   {copy.title}
                 </h3>
-                <p className="relative mt-4 max-w-2xl text-sm leading-6 text-muted sm:text-base sm:leading-7">
+                <p className="relative mt-3 max-w-2xl text-sm leading-6 text-muted sm:mt-4 sm:text-base sm:leading-7">
                   {copy.text}
                 </p>
                 <span className="relative mt-auto h-px w-16 translate-y-2 bg-gradient-to-r from-gold/45 to-transparent" />

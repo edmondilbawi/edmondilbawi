@@ -12,13 +12,13 @@ export function V2ContactCommand() {
 
   return (
     <section
-      className="relative z-10 scroll-mt-16 overflow-hidden py-16 sm:py-20 lg:py-24"
+      className="relative z-10 scroll-mt-16 overflow-hidden py-12 sm:py-20 lg:py-24"
       id="v2-contact"
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,rgba(212,175,55,0.1),transparent_34%)]" />
       <div className="relative z-10 mx-auto w-full max-w-[84rem] px-5 sm:px-6 lg:px-10">
         <motion.div
-          className="v2-panel-surface relative overflow-hidden rounded-sm border-gold/25 px-5 py-9 shadow-[0_30px_100px_rgba(0,0,0,0.4),0_0_70px_rgba(212,175,55,0.06)] sm:px-9 sm:py-11 lg:px-12 lg:py-14"
+          className="v2-panel-surface relative overflow-hidden rounded-sm border-gold/25 px-5 py-7 shadow-[0_30px_100px_rgba(0,0,0,0.4),0_0_70px_rgba(212,175,55,0.06)] sm:px-9 sm:py-11 lg:px-12 lg:py-14"
           initial={shouldReduceMotion ? false : { opacity: 0, y: 26 }}
           transition={{ duration: 0.58 }}
           viewport={{ amount: 0.25, once: true }}
@@ -28,7 +28,7 @@ export function V2ContactCommand() {
           <div className="pointer-events-none absolute left-0 top-0 h-px w-2/5 bg-gradient-to-r from-gold via-gold/40 to-transparent" />
           <div className="pointer-events-none absolute bottom-0 right-0 h-px w-2/5 bg-gradient-to-l from-gold via-gold/40 to-transparent" />
 
-          <div className="relative grid gap-9 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:gap-12">
+          <div className="relative grid gap-7 sm:gap-9 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:gap-12">
             <div>
               <div className="flex items-center gap-3 text-gold">
                 <Command aria-hidden size={18} />
@@ -55,7 +55,7 @@ export function V2ContactCommand() {
 
                 return (
                   <a
-                    className="focus-ring group flex min-h-20 cursor-pointer items-center gap-4 rounded-sm border border-white/[0.09] bg-black/25 p-4 transition-all duration-200 hover:-translate-y-1 hover:border-gold/40 hover:bg-gold/[0.045] hover:shadow-gold-soft sm:p-5"
+                    className="focus-ring group flex min-h-[4.5rem] cursor-pointer items-center gap-3 rounded-sm border border-white/[0.09] bg-black/25 p-4 transition-all duration-200 hover:-translate-y-1 hover:border-gold/40 hover:bg-gold/[0.045] hover:shadow-gold-soft sm:min-h-20 sm:gap-4 sm:p-5"
                     href={link.href}
                     key={link.label}
                     rel={isExternal ? "noreferrer" : undefined}

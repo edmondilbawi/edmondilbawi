@@ -26,11 +26,11 @@ export function V2Snapshot() {
 
   return (
     <section
-      className="v2-section-surface relative z-10 -mt-6 scroll-mt-16 overflow-hidden py-16 sm:py-20 lg:py-24"
+      className="v2-section-surface relative z-10 -mt-4 scroll-mt-16 overflow-hidden py-12 sm:-mt-6 sm:py-20 lg:py-24"
       id="v2-snapshot"
     >
       <div className="relative z-10 mx-auto w-full max-w-[90rem] px-5 sm:px-6 lg:px-10">
-        <div className="grid items-center gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-12">
+        <div className="grid items-center gap-8 sm:gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-12">
           <motion.div
             initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}
             transition={{ duration: 0.55, ease: "easeOut" }}
@@ -55,14 +55,14 @@ export function V2Snapshot() {
               {t.snapshot.text}
             </p>
 
-            <div className="relative mx-auto mt-8 w-fit lg:mx-0">
+            <div className="relative mx-auto mt-7 w-fit sm:mt-8 lg:mx-0">
               <div className="pointer-events-none absolute -inset-10 rounded-full bg-[radial-gradient(circle,rgba(205,139,43,0.11),transparent_68%)] blur-xl" />
               <div className="pointer-events-none absolute left-[calc(100%-0.25rem)] top-1/2 hidden h-px w-28 bg-gradient-to-r from-gold/30 to-transparent lg:block" />
               <motion.div
                 animate={
                   shouldReduceMotion ? undefined : { rotate: [0, 1.5, 0, -1.5, 0] }
                 }
-                className="relative grid h-44 w-44 place-items-center rounded-full border border-gold/25 p-4 shadow-[0_0_70px_rgba(205,139,43,0.09)] sm:h-48 sm:w-48"
+                className="relative grid h-40 w-40 place-items-center rounded-full border border-gold/25 p-4 shadow-[0_0_70px_rgba(205,139,43,0.09)] sm:h-48 sm:w-48"
                 style={{
                   background:
                     "conic-gradient(#D4AF37 0deg 75.6deg, rgba(212,175,55,0.08) 75.6deg 360deg)"
@@ -90,7 +90,7 @@ export function V2Snapshot() {
 
               return (
                 <motion.article
-                  className={`v2-card-surface group relative min-h-44 overflow-hidden rounded-sm p-5 transition-all duration-200 hover:-translate-y-1 hover:border-gold/35 hover:shadow-gold-soft ${
+                  className={`v2-card-surface group relative min-h-40 overflow-hidden rounded-sm p-4 transition-all duration-200 hover:-translate-y-1 hover:border-gold/35 hover:shadow-gold-soft sm:min-h-44 sm:p-5 ${
                     index === 2
                       ? "sm:col-span-2 sm:min-h-40 sm:pr-[36%]"
                       : ""
@@ -110,13 +110,13 @@ export function V2Snapshot() {
                     </span>
                     <span className="mt-5 h-px w-14 bg-gradient-to-r from-gold/25 to-transparent" />
                   </div>
-                  <p className="mt-6 font-mono text-4xl font-bold tracking-[-0.07em] text-ink">
+                  <p className="mt-4 font-mono text-4xl font-bold tracking-[-0.07em] text-ink sm:mt-6">
                     {metric.value}
                   </p>
                   <p className="mt-2 text-sm font-semibold uppercase tracking-[0.12em] text-gold">
                     {copy.label}
                   </p>
-                  <p className="mt-3 text-sm leading-6 text-muted">
+                  <p className="mt-2 text-sm leading-6 text-muted sm:mt-3">
                     {copy.detail}
                   </p>
                 </motion.article>
@@ -124,7 +124,7 @@ export function V2Snapshot() {
             })}
 
             <motion.div
-              className="relative z-10 overflow-hidden rounded-sm border border-gold/25 bg-[linear-gradient(135deg,rgba(212,175,55,0.1),rgba(16,14,10,0.84))] p-5 shadow-[0_18px_48px_rgba(0,0,0,0.3),0_0_30px_rgba(212,175,55,0.06)] backdrop-blur-md sm:col-span-2 sm:-mt-8 sm:mr-5 sm:w-[58%] sm:justify-self-end"
+              className="relative z-10 overflow-hidden rounded-sm border border-gold/25 bg-[linear-gradient(135deg,rgba(212,175,55,0.1),rgba(16,14,10,0.84))] p-4 shadow-[0_18px_48px_rgba(0,0,0,0.3),0_0_30px_rgba(212,175,55,0.06)] backdrop-blur-md sm:col-span-2 sm:-mt-8 sm:mr-5 sm:w-[58%] sm:justify-self-end sm:p-5"
               initial={shouldReduceMotion ? false : { opacity: 0, x: 20 }}
               transition={{ delay: 0.24, duration: 0.48 }}
               viewport={{ amount: 0.4, once: true }}
