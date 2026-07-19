@@ -445,7 +445,7 @@ This chapter adds 1% to my wisdom bar because it taught me that growth is not al
     branch: "building",
     text: `Problem solving is one of the clearest ways my major shaped the way I think.
 
-As a Computer Science student, I learned that the real value of my education is not only in memorizing a course, a chapter, or a specific subject. Those details matter, but they are not always what stays forever.
+As a Computer Science student, I learned that the real value of my education is not only in memorizing a course, a chapter, or a specific subject. Those details matter, but they are not always what stays with us.
 
 What stays is the way the mind changes.
 
@@ -682,7 +682,7 @@ It is the ability to be affected by something and still find a way to continue.
 
 Resilience does not mean being unbreakable. I do not think growth requires a person to act like pressure, failure, or disappointment never hurts. Real resilience begins when something does hurt, but does not become the end of the story.
 
-There are moments in life where plans do not move the way we expected. Effort does not always lead to immediate results. People disappoint us. Opportunities may not arrive when we want them. And sometimes, the hardest part is not the problem itself, but the need to keep moving while carrying its weight.
+There are moments in life where plans do not move the way we expect. Effort does not always lead to immediate results. People disappoint us. Opportunities may not arrive when we want them. And sometimes, the hardest part is not the problem itself, but the need to keep moving while carrying its weight.
 
 I am still learning resilience.
 
