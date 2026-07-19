@@ -39,10 +39,21 @@ export function V2Gateway() {
               <p className="mt-3 text-base font-medium text-ink/90 sm:text-lg">
                 Five roots. Twenty-one reflections. One version still loading.
               </p>
-              <p className="mt-3 max-w-2xl text-sm leading-7 text-muted sm:text-base">
-                A deeper layer of the portfolio: the mindset, questions, and
-                reflections behind the work.
-              </p>
+              <div className="relative mt-5 max-w-2xl overflow-hidden rounded-sm border border-white/10 bg-black/35 px-5 py-4 shadow-[0_16px_42px_rgba(0,0,0,0.2),0_0_24px_rgba(212,175,55,0.035)] sm:px-6 sm:py-5">
+                <span
+                  aria-hidden
+                  className="absolute inset-y-0 left-0 w-px bg-gradient-to-b from-transparent via-gold/70 to-transparent"
+                />
+                <p className="text-sm leading-7 text-ink/80 sm:text-base">
+                  A CV can show milestones, but it cannot show the full journey
+                  behind them.
+                </p>
+                <p className="mt-3 text-sm leading-7 text-ink/80 sm:text-base">
+                  21% Loaded was created to show the character, reflections,
+                  and personal growth behind those milestones — the person I am
+                  becoming while working toward them.
+                </p>
+              </div>
             </div>
 
             <Button
