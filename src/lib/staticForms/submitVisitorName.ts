@@ -1,17 +1,35 @@
 import { visitorNameFormConfig } from "@/data/staticFormConfig";
 
 const VISITOR_SOURCE = "21% Loaded";
+const NO_REFLECTION = "None";
 
-export async function submitVisitorName(visitorName: string) {
+type VisitorActivity = {
+  action: "Name submitted" | "Opened reflection";
+  reflectionOpened: string;
+  visitorName: string;
+};
+
+async function submitVisitorActivity({
+  action,
+  reflectionOpened,
+  visitorName
+}: VisitorActivity) {
   const normalizedName = visitorName.trim();
+  const normalizedReflection = reflectionOpened.trim();
 
-  if (!visitorNameFormConfig.enabled || !normalizedName) {
+  if (
+    !visitorNameFormConfig.enabled ||
+    !normalizedName ||
+    !normalizedReflection
+  ) {
     return false;
   }
 
   if (
     !visitorNameFormConfig.actionUrl ||
-    !visitorNameFormConfig.nameEntryId
+    !visitorNameFormConfig.nameEntryId ||
+    !visitorNameFormConfig.reflectionEntryId ||
+    !visitorNameFormConfig.actionEntryId
   ) {
     if (process.env.NODE_ENV === "development") {
       console.warn(
@@ -24,6 +42,11 @@ export async function submitVisitorName(visitorName: string) {
 
   const formData = new FormData();
   formData.append(visitorNameFormConfig.nameEntryId, normalizedName);
+  formData.append(
+    visitorNameFormConfig.reflectionEntryId,
+    normalizedReflection
+  );
+  formData.append(visitorNameFormConfig.actionEntryId, action);
 
   if (visitorNameFormConfig.sourceEntryId) {
     formData.append(visitorNameFormConfig.sourceEntryId, VISITOR_SOURCE);
@@ -44,4 +67,23 @@ export async function submitVisitorName(visitorName: string) {
 
     return false;
   }
+}
+
+export function submitVisitorName(visitorName: string) {
+  return submitVisitorActivity({
+    action: "Name submitted",
+    reflectionOpened: NO_REFLECTION,
+    visitorName
+  });
+}
+
+export function submitOpenedReflection(
+  visitorName: string,
+  reflectionOpened: string
+) {
+  return submitVisitorActivity({
+    action: "Opened reflection",
+    reflectionOpened,
+    visitorName
+  });
 }
