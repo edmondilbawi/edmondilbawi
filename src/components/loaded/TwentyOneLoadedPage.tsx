@@ -37,7 +37,6 @@ type AssistantActivity = "idle" | "typing" | "searching";
 const VISITOR_NAME_STORAGE_KEY = "twentyOneLoadedVisitorName";
 const VISITOR_NAME_SUBMITTED_STORAGE_KEY =
   "twentyOneLoadedVisitorNameSubmitted";
-const OPENED_REFLECTIONS_STORAGE_KEY = "twentyOneLoadedOpenedReflections";
 
 const ROOTS = [
   "lens",
@@ -130,7 +129,6 @@ export function TwentyOneLoadedPage() {
     useState<WisdomChapterData | null>(null);
   const assistantTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const pendingVisitorNameRef = useRef<string | null>(null);
-  const pendingOpenedReflectionsRef = useRef(new Set<string>());
   const isAssistantProcessing = assistantActivity !== "idle";
 
   useEffect(() => {
@@ -164,86 +162,9 @@ export function TwentyOneLoadedPage() {
       return;
     }
 
-    const trackingKey = `${normalizedName}:${readerChapter.id}`;
-
-    if (pendingOpenedReflectionsRef.current.has(trackingKey)) {
-      return;
-    }
-
-    let openedByVisitor: Record<string, string[]> = {};
-
-    try {
-      const storedValue = window.localStorage.getItem(
-        OPENED_REFLECTIONS_STORAGE_KEY
-      );
-
-      if (storedValue) {
-        const parsedValue: unknown = JSON.parse(storedValue);
-
-        if (parsedValue && typeof parsedValue === "object") {
-          openedByVisitor = parsedValue as Record<string, string[]>;
-        }
-      }
-    } catch {
-      // Tracking remains non-blocking when browser storage is unavailable.
-    }
-
-    const openedChapterIds = Array.isArray(openedByVisitor[normalizedName])
-      ? openedByVisitor[normalizedName]
-      : [];
-
-    if (openedChapterIds.includes(readerChapter.id)) {
-      return;
-    }
-
-    pendingOpenedReflectionsRef.current.add(trackingKey);
-
     const reflectionLabel = `Chapter ${readerChapter.id} — ${readerChapter.title}`;
 
-    void submitOpenedReflection(normalizedName, reflectionLabel).then(
-      (wasSubmitted) => {
-        if (wasSubmitted) {
-          let latestOpenedByVisitor = openedByVisitor;
-
-          try {
-            const latestStoredValue = window.localStorage.getItem(
-              OPENED_REFLECTIONS_STORAGE_KEY
-            );
-
-            if (latestStoredValue) {
-              const latestParsedValue: unknown = JSON.parse(latestStoredValue);
-
-              if (latestParsedValue && typeof latestParsedValue === "object") {
-                latestOpenedByVisitor = latestParsedValue as Record<
-                  string,
-                  string[]
-                >;
-              }
-            }
-
-            const latestChapterIds = Array.isArray(
-              latestOpenedByVisitor[normalizedName]
-            )
-              ? latestOpenedByVisitor[normalizedName]
-              : [];
-
-            window.localStorage.setItem(
-              OPENED_REFLECTIONS_STORAGE_KEY,
-              JSON.stringify({
-                ...latestOpenedByVisitor,
-                [normalizedName]: Array.from(
-                  new Set([...latestChapterIds, readerChapter.id])
-                )
-              })
-            );
-          } catch {
-            // The reader remains usable when browser storage is unavailable.
-          }
-        }
-
-        pendingOpenedReflectionsRef.current.delete(trackingKey);
-      }
-    );
+    void submitOpenedReflection(normalizedName, reflectionLabel);
   }, [readerChapter, visitorName]);
 
   const scheduleAssistantResponse = (callback: () => void, delay: number) => {
