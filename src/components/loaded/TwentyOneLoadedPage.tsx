@@ -26,11 +26,14 @@ import {
   type WisdomBranch,
   type WisdomChapterData
 } from "@/data/wisdomChapters";
+import { submitVisitorName } from "@/lib/staticForms/submitVisitorName";
 
 type ChatStep = "name" | "chapter" | "selected";
 type AssistantActivity = "idle" | "typing" | "searching";
 
 const VISITOR_NAME_STORAGE_KEY = "twentyOneLoadedVisitorName";
+const VISITOR_NAME_SUBMITTED_STORAGE_KEY =
+  "twentyOneLoadedVisitorNameSubmitted";
 
 const ROOTS = [
   "lens",
@@ -122,6 +125,7 @@ export function TwentyOneLoadedPage() {
   const [readerChapter, setReaderChapter] =
     useState<WisdomChapterData | null>(null);
   const assistantTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const pendingVisitorNameRef = useRef<string | null>(null);
   const isAssistantProcessing = assistantActivity !== "idle";
 
   useEffect(() => {
@@ -215,6 +219,45 @@ export function TwentyOneLoadedPage() {
     }, 850);
   };
 
+  const submitVisitorNameInBackground = (name: string) => {
+    const normalizedName = name.trim();
+
+    if (!normalizedName || pendingVisitorNameRef.current === normalizedName) {
+      return;
+    }
+
+    try {
+      const submittedName = window.localStorage.getItem(
+        VISITOR_NAME_SUBMITTED_STORAGE_KEY
+      );
+
+      if (submittedName === normalizedName) {
+        return;
+      }
+    } catch {
+      // In-memory tracking still prevents duplicate submissions this visit.
+    }
+
+    pendingVisitorNameRef.current = normalizedName;
+
+    void submitVisitorName(normalizedName).then((wasSubmitted) => {
+      if (wasSubmitted) {
+        try {
+          window.localStorage.setItem(
+            VISITOR_NAME_SUBMITTED_STORAGE_KEY,
+            normalizedName
+          );
+        } catch {
+          // Submission succeeds even when browser storage is unavailable.
+        }
+      }
+
+      if (pendingVisitorNameRef.current === normalizedName) {
+        pendingVisitorNameRef.current = null;
+      }
+    });
+  };
+
   const handleChatSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const submittedValue = chatInput.trim();
@@ -240,6 +283,8 @@ export function TwentyOneLoadedPage() {
       } catch {
         // Persistence is optional; local state remains available for this visit.
       }
+
+      submitVisitorNameInBackground(submittedValue);
 
       scheduleAssistantResponse(() => {
         setChapterIntroVisible(true);
@@ -753,7 +798,11 @@ export function TwentyOneLoadedPage() {
                 </label>
                 <div className="flex min-w-0 items-center gap-2 rounded-sm border border-white/15 bg-black/45 p-2 transition-colors duration-200 focus-within:border-gold/55">
                   <input
-                    aria-describedby="companion-status"
+                    aria-describedby={
+                      chatStep === "name"
+                        ? "visitor-name-privacy companion-status"
+                        : "companion-status"
+                    }
                     autoComplete={chatStep === "name" ? "name" : "off"}
                     className="min-h-11 min-w-0 flex-1 bg-transparent px-2 text-base text-ink outline-none placeholder:text-ink/60"
                     disabled={isAssistantProcessing}
@@ -802,6 +851,15 @@ export function TwentyOneLoadedPage() {
                     <span>Send</span>
                   </button>
                 </div>
+                {chatStep === "name" ? (
+                  <p
+                    className="mt-3 text-base leading-6 text-ink/75"
+                    id="visitor-name-privacy"
+                  >
+                    Your name may be saved so I can see who explored 21%
+                    Loaded.
+                  </p>
+                ) : null}
                 <p
                   aria-live="polite"
                   className="sr-only"
