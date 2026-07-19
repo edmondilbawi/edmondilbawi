@@ -50,7 +50,7 @@ export function ReflectionReader({
   onChangeChapter,
   onClose
 }: ReflectionReaderProps) {
-  const [readingMode, setReadingMode] = useState<ReadingMode>("light");
+  const [readingMode, setReadingMode] = useState<ReadingMode>("dark");
   const readerScrollRef = useRef<HTMLDivElement | null>(null);
   const backButtonRef = useRef<HTMLButtonElement | null>(null);
   const activeChapterIndex = activeChapter
@@ -67,7 +67,7 @@ export function ReflectionReader({
         setReadingMode(storedMode);
       }
     } catch {
-      // Light mode remains the default when browser storage is unavailable.
+      // Dark mode remains the default when browser storage is unavailable.
     }
   }, []);
 
