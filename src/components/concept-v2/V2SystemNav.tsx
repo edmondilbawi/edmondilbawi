@@ -3,6 +3,7 @@
 import { motion, useScroll, useSpring } from "framer-motion";
 import { CircleDot } from "lucide-react";
 import { useV2Language } from "@/components/concept-v2/V2LanguageProvider";
+import { withSiteBasePath } from "@/utils/sitePath";
 
 export function V2SystemNav() {
   const { scrollYProgress } = useScroll();
@@ -13,7 +14,7 @@ export function V2SystemNav() {
   });
   const scenes = [
     { label: t.nav.home, href: "#v2-home" },
-    { label: t.nav.loaded, href: "/21-loaded" },
+    { label: t.nav.loaded, href: withSiteBasePath("/21-loaded/") },
     { label: t.nav.about, href: "#v2-about" },
     { label: t.nav.skills, href: "#v2-skills" },
     { label: t.nav.projects, href: "#v2-projects" },
@@ -67,7 +68,7 @@ export function V2SystemNav() {
             <a
               aria-label={t.hero.exploreLoaded}
               className="focus-ring group flex min-h-10 items-center gap-2 rounded-sm border border-gold/40 bg-gold/[0.08] px-3 text-[10px] font-bold uppercase tracking-[0.14em] text-gold transition-all duration-200 hover:bg-gold hover:text-black xl:hidden"
-              href="/21-loaded"
+              href={withSiteBasePath("/21-loaded/")}
             >
               <CircleDot
                 aria-hidden

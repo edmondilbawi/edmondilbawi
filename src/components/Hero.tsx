@@ -12,6 +12,7 @@ import Image from "next/image";
 import { Button } from "@/components/Button";
 import { profile } from "@/data/portfolioContent";
 import { useHydratedReducedMotion } from "@/hooks/useHydratedReducedMotion";
+import { withSiteBasePath } from "@/utils/sitePath";
 
 const ambientPoints = [
   { delay: 0, left: "8%", top: "24%" },
@@ -232,7 +233,7 @@ export function Hero() {
                 fill
                 priority
                 sizes="(min-width: 1024px) 42vw, 100vw"
-                src="/images/edmond-hero-photo.jpeg"
+                src={withSiteBasePath("/images/edmond-hero-photo.jpeg")}
               />
               <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,5,5,0.5),transparent_38%,rgba(5,5,5,0.36)),linear-gradient(180deg,transparent_48%,rgba(5,5,5,0.82))]" />
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_22%_12%,rgba(212,175,55,0.2),transparent_30%)]" />

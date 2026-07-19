@@ -23,6 +23,8 @@ The static output is generated in `out/`.
 
 The workflow at `.github/workflows/deploy.yml` builds the site and publishes the `out` directory through GitHub Pages. It can run on pushes to `main` or manually through `workflow_dispatch`.
 
-The intended custom domain is `edmondilbawi.com`. The `public/CNAME` file includes that domain and is copied into the static export. DNS will be configured only after the repository and Pages deployment are ready.
+The temporary site URL is `https://edmondilbawi.github.io/edmondilbawi/`. The export uses the `/edmondilbawi` base path and does not include a custom-domain `CNAME` file.
+
+After `edmondilbawi.com` is purchased, remove the project `basePath` and `assetPrefix` configuration, remove the matching public-path prefix mapping, and restore `public/CNAME` with the custom domain.
 
 No deployment is performed by the local build command.

@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Edmond Ilbawi",
   description:
     "Computer science portfolio of Edmond Ilbawi, featuring academic software projects, technical skills, experience, and the 21% Loaded digital journal.",
-  metadataBase: new URL("https://edmondilbawi.com")
+  metadataBase: new URL("https://edmondilbawi.github.io/edmondilbawi/")
 };
 
 export default function RootLayout({

@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Button } from "@/components/Button";
 import { useV2Language } from "@/components/concept-v2/V2LanguageProvider";
 import { useHydratedReducedMotion } from "@/hooks/useHydratedReducedMotion";
+import { withSiteBasePath } from "@/utils/sitePath";
 
 const ACADEMIC_SENTENCE =
   "University of Balamand · Computer Science · Expected Graduation 2027";
@@ -455,7 +456,7 @@ export function V2HeroScene({ isReady = true }: V2HeroSceneProps) {
                   fill
                   priority
                   sizes="(min-width: 1024px) 25rem, 80vw"
-                  src="/images/edmond-hero-photo.jpeg"
+                  src={withSiteBasePath("/images/edmond-hero-photo.jpeg")}
                 />
                 <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_52%_42%,transparent_34%,rgba(5,5,5,0.08)_68%,rgba(5,5,5,0.28)_100%),linear-gradient(90deg,rgba(5,5,5,0.32),transparent_35%,rgba(5,5,5,0.55)),linear-gradient(180deg,transparent_58%,rgba(5,5,5,0.48))]" />
                 <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_22%_12%,rgba(218,151,46,0.14),transparent_30%)]" />

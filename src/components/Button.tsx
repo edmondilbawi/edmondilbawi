@@ -2,6 +2,7 @@
 
 import { clsx } from "clsx";
 import type { ButtonHTMLAttributes, ReactNode } from "react";
+import { withSiteBasePath } from "@/utils/sitePath";
 
 type ButtonVariant = "primary" | "secondary" | "ghost";
 
@@ -47,7 +48,7 @@ export function Button({
 
   if (href && !disabled) {
     return (
-      <a className={classes} download={download} href={href}>
+      <a className={classes} download={download} href={withSiteBasePath(href)}>
         {icon ? (
           <span className="relative z-10 inline-flex transition-all duration-200 group-hover:-translate-y-0.5 group-hover:scale-110 group-hover:drop-shadow-[0_0_8px_rgba(212,175,55,0.45)]">
             {icon}
