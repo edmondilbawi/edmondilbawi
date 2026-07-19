@@ -28,7 +28,7 @@ export function V2Gateway() {
             aria-hidden
             className="pointer-events-none absolute -right-20 top-1/2 h-52 w-[38rem] -translate-y-1/2 rounded-[50%] border-t border-gold/30 bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.08),transparent_68%)]"
           />
-          <div className="relative grid items-end gap-7 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-12">
+          <div className="relative">
             <div className="max-w-3xl">
               <p className="font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-gold">
                 Digital journal
@@ -54,16 +54,16 @@ export function V2Gateway() {
                   becoming while working toward them.
                 </p>
               </div>
-            </div>
 
-            <Button
-              className="w-full sm:w-auto sm:min-w-56"
-              href="/21-loaded"
-              icon={<ArrowUpRight aria-hidden size={18} />}
-              variant="secondary"
-            >
-              Explore 21% Loaded
-            </Button>
+              <Button
+                className="mt-5 w-full sm:w-auto sm:min-w-56"
+                href="/21-loaded"
+                icon={<ArrowUpRight aria-hidden size={18} />}
+                variant="secondary"
+              >
+                Explore 21% Loaded
+              </Button>
+            </div>
           </div>
         </div>
       </motion.div>
