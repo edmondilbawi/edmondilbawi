@@ -282,13 +282,7 @@ export function ReflectionReader({
                 <span
                   className={isLightMode ? "text-[#8a6112]" : "text-gold"}
                 >
-                  Chapter {activeChapter.id}
-                </span>
-                <span
-                  aria-hidden
-                  className={isLightMode ? "text-[#756b59]" : "text-ink/40"}
-                >
-                  —
+                  Chapter {activeChapter.id}:
                 </span>
                 <span className="min-w-0 truncate">{activeChapter.title}</span>
               </p>

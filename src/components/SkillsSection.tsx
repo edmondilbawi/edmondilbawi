@@ -20,7 +20,7 @@ export function SkillsSection() {
           index="02"
           status="Toolkit active"
           title="Technical toolkit in progress"
-          description="A focused set of technologies, tools, and practices I am building through coursework, projects, and hands-on problem solving."
+          description="A focused set of technologies, tools, and practices I am building through coursework, projects, and practical problem solving."
         />
 
         <div className="mt-14 grid gap-10 lg:grid-cols-3">

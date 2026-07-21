@@ -278,11 +278,9 @@ This chapter adds 1% to my wisdom bar because it taught me that real adaptation 
 
 It is the eagerness to learn, grow, build my character, and invest more in myself. It is what pushes me to ask questions, explore ideas, and look beyond what I already know.
 
-I became more curious when I started seeing the results of self-investment. Every time I learned something new, improved a skill, or understood life from a deeper angle, I realized that growth creates momentum. The more I grew, the more I wanted to grow.
+I became more curious when I started seeing the results of investing in myself. Every time I learned something new, improved a skill, or understood life from a deeper angle, I realized that growth creates momentum. The more I grew, the more I wanted to grow.
 
-But curiosity also gave me humility.
-
-Because the more I learned, the more I realized how much I still did not know. It reminded me that knowledge does not make a person complete. It only reveals how much more there is to understand.
+Curiosity also gave me humility because the more I learned, the more I realized how much I still did not know. It reminded me that knowledge does not make a person complete. It only reveals how much more there is to understand.
 
 That is why curiosity is not only about ambition. It is also about humility.
 
@@ -319,9 +317,9 @@ That is why discipline matters.
 
 It reminds me that growth usually asks for something uncomfortable: effort when I feel tired, patience when results are slow, and commitment when motivation fades.
 
-I see discipline as self-respect, not punishment. It is a way of telling my future self that I did not forget about him.
+I see discipline as a form of respect for myself, not punishment. It is a way of telling my future self that I did not forget about him.
 
-This chapter adds 1% to my wisdom bar because it taught me that becoming better is not built only by what I want, but by what I repeatedly choose.`,
+This chapter adds 1% to my wisdom bar because it taught me that becoming better depends not only on what I want, but on what I repeatedly choose.`,
     audioSrc: "",
     imageSrc: ""
   },
@@ -353,7 +351,7 @@ Every new project, environment, or challenge reminds me that I will not always b
 
 At first, being a beginner can feel uncomfortable. But I started to understand that not knowing something does not make me incapable. It only shows me which part of myself still needs to be built.
 
-In computer science, and in life, the strongest person is not always the one who already has the answer. Sometimes, it is the one who is willing to learn fast enough to reach it.
+In computer science and in life, the strongest person is not always the one who already has the answer. Sometimes, it is the one who is willing to learn fast enough to reach it.
 
 This chapter adds 1% to my wisdom bar because it taught me that growth begins when I stop fearing what I do not know.`,
     audioSrc: "",
@@ -478,7 +476,7 @@ Every decision carries more than one question. What do I want? What makes sense?
 
 I learned that decision making is not only about choosing quickly or confidently. It is about understanding the weight of a choice before carrying it forward.
 
-Some decisions need emotion, because the heart can recognize meaning before logic can explain it. Other decisions need reason, because the mind can protect me from what emotion wants too fast.
+Some decisions need emotion, because the heart can recognize meaning before logic can explain it. Other decisions need reason, because the mind can protect me from choosing too quickly based on emotion.
 
 With time, I started seeing decisions as more than isolated moments. They are small turning points. Each one carries a direction, and each direction slowly shapes identity.
 
@@ -547,7 +545,7 @@ I started seeing money differently when I realized that every financial decision
 
 Financial literacy taught me that wanting money is not the same as understanding money.
 
-Wanting money without awareness can make a person controlled by it. Understanding money gives a person the ability to use it with purpose. It creates options, protects freedom, and teaches long-term thinking.
+Wanting money without awareness can leave a person controlled by it. Understanding money gives a person the ability to use it with purpose. It creates options, protects freedom, and encourages thinking about the long term.
 
 I am still learning this part of life, but I know that financial maturity is connected to responsibility.
 

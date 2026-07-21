@@ -37,7 +37,7 @@ export function V2Gateway() {
                 21% Loaded
               </h2>
               <p className="mt-3 text-base font-medium text-ink/90 sm:text-lg">
-                Five roots. Twenty-one reflections. One version still loading.
+                Five roots. 21 reflections. One version still loading.
               </p>
               <div className="relative mt-4 max-w-2xl overflow-hidden rounded-sm border border-white/10 bg-black/35 px-4 py-4 shadow-[0_16px_42px_rgba(0,0,0,0.2),0_0_24px_rgba(212,175,55,0.035)] sm:mt-5 sm:px-6 sm:py-5">
                 <span
@@ -50,8 +50,8 @@ export function V2Gateway() {
                 </p>
                 <p className="mt-3 text-sm leading-7 text-ink/80 sm:text-base">
                   21% Loaded was created to show the character, reflections,
-                  and personal growth behind those milestones — the person I am
-                  becoming while working toward them.
+                  and personal growth behind those milestones, and the person I
+                  am becoming while working toward them.
                 </p>
               </div>
 

@@ -114,7 +114,7 @@ function BankingSystemPreview() {
   const flow = ["client FIFO", "server thread", "account mutex", "encrypted file"];
 
   return (
-    <PreviewShell label="Preview of the secure multi-threaded banking system project">
+    <PreviewShell label="Preview of the secure multithreaded banking system project">
       <div className="flex items-center justify-between gap-3">
         <div>
           <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">

@@ -12,7 +12,7 @@ const featuredExperiences = [
     dates: "August 2025 - June 2026",
     location: "Beirut Governorate, Lebanon",
     description:
-      "Representing the Developers Club by supporting communication, promoting initiatives, and strengthening student engagement.",
+      "Representing the Developer Club by supporting communication, promoting initiatives, and strengthening student engagement.",
     highlights: [
       "Promote initiatives and raise event awareness.",
       "Connect members, students, and external audiences."
@@ -27,12 +27,12 @@ const featuredExperiences = [
       "Gained exposure to software development, IT operations, cybersecurity practices, and technology's role in secure banking systems.",
     highlights: [
       "Saw technology power secure, efficient banking.",
-      "Sharpened analytical thinking and professional problem-solving."
+      "Sharpened analytical thinking and professional problem solving."
     ]
   },
   {
     organization: "International School of Choueifat",
-    role: "Head Prefect - Academic Department",
+    role: "Head Prefect, Academic Department",
     dates: "September 2023 - June 2024",
     location: "Damascus Governorate, Syria",
     description:

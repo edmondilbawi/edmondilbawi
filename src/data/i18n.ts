@@ -134,7 +134,7 @@ export const translations = {
         {
           name: "Becoming",
           meaning: "The reminder that every version is temporary.",
-          keywords: "Adaptability, resilience, humility, and long-term growth."
+          keywords: "Adaptability, resilience, humility, and growth over time."
         }
       ]
     },
@@ -143,7 +143,7 @@ export const translations = {
       title: "More than what I build.",
       titleAccent: "",
       subtitle:
-        "A closer look at how I think, learn, and grow — and the foundations shaping the work behind the portfolio.",
+        "A closer look at how I think, learn, and grow, and at the foundations shaping the work behind the portfolio.",
       label: "About",
       perspective: "Personal perspective",
       heading: "How I think, learn, and grow",
@@ -180,7 +180,7 @@ export const translations = {
       eyebrow: "Capabilities",
       title: "Technical toolkit in progress",
       subtitle:
-        "A focused set of technologies, tools, and practices I am building through coursework, projects, and hands-on problem solving.",
+        "A focused set of technologies, tools, and practices I am building through coursework, projects, and practical problem solving.",
       groups: [
         "Programming & Systems",
         "Web & Application Development",
@@ -192,7 +192,7 @@ export const translations = {
       eyebrow: "Selected Work",
       title: "Academic projects",
       subtitle:
-        "Two selected technical projects that reflect how I apply computer science concepts through structured, project-based work.",
+        "Two selected technical projects that reflect how I apply computer science concepts through structured project work.",
       preview: "Project structure preview",
       project: "Project",
       statuses: ["Academic Project", "Operating Systems Project"],
@@ -232,7 +232,7 @@ export const translations = {
       ariaLabel: "21% Loaded library",
       topLabel: "21% Loaded",
       title: "The 21% Library",
-      subtitle: "Five roots. Twenty-one reflections. One version still loading.",
+      subtitle: "Five roots. 21 reflections. One version still loading.",
       returnToPortfolio: "Return to Portfolio",
       exploreBranch: "Explore Branch",
       hoverPrompt: "Hover or focus a root to preview its meaning.",

@@ -431,8 +431,8 @@ export function TwentyOneLoadedPage() {
               21% Loaded
             </h1>
             <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-ink/75 sm:mt-5 sm:text-lg sm:leading-8">
-              “21% Loaded” means I am still becoming — not complete, but shaped
-              by reflection, growth, and experience.
+              “21% Loaded” means I am still becoming: not complete, but shaped by
+              reflection, growth, and experience.
             </p>
 
             <div className="mx-auto mt-7 max-w-4xl text-left sm:mt-9">
@@ -462,7 +462,7 @@ export function TwentyOneLoadedPage() {
               <div className="mt-5 space-y-4 border-y border-white/[0.09] py-4 sm:mt-6 sm:py-5">
                 <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-[0.9375rem] font-medium text-ink/70 sm:justify-start">
                   <span>Five roots</span>
-                  <span>Twenty-one reflections</span>
+                  <span>21 reflections</span>
                 </div>
                 <div className="grid grid-cols-2 gap-2 sm:grid-cols-2 lg:grid-cols-5">
                   {ROOTS.map((root, index) => (
@@ -619,7 +619,7 @@ export function TwentyOneLoadedPage() {
                         reflections would you like to dive into?
                       </p>
                       <p className="mt-4 text-[0.9375rem] leading-6 text-ink/70">
-                        Choose a chapter below, or type its number/title.
+                        Choose a chapter below, or type its number or title.
                       </p>
                       <div
                         aria-label="Choose a reflection path"
@@ -807,7 +807,7 @@ export function TwentyOneLoadedPage() {
                       I found it.
                     </p>
                     <p className="mt-2 text-base leading-7 text-ink/90">
-                      You selected Chapter {selectedChapter.id} — {selectedChapter.title}.
+                      You selected Chapter {selectedChapter.id}: {selectedChapter.title}.
                     </p>
                     <div className="mt-4 flex flex-wrap items-center gap-2 text-[0.9375rem] leading-6 text-ink/70">
                       <span className="rounded-full border border-white/10 px-2.5 py-1">

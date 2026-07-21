@@ -654,7 +654,7 @@ export function WisdomExperience({
             <p className="mx-auto mt-3 max-w-2xl text-base leading-7 text-muted sm:text-lg">
               {publicWording
                 ? library.subtitle
-                : "Five roots. Twenty-one reflections. One version still loading."}
+                : "Five roots. 21 reflections. One version still loading."}
             </p>
             {!publicWording ? (
               <p className="mx-auto mt-2 max-w-2xl text-xs leading-5 text-gold/75">

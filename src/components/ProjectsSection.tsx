@@ -19,7 +19,7 @@ export function ProjectsSection() {
           index="03"
           status="2 case studies loaded"
           title="Academic projects"
-          description="Two selected technical projects that reflect how I apply computer science concepts through structured, project-based work."
+          description="Two selected technical projects that reflect how I apply computer science concepts through structured project work."
         />
 
         <div className="mt-12 grid gap-5 lg:grid-cols-2">

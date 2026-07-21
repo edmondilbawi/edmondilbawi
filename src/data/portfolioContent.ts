@@ -24,7 +24,7 @@ export const profile = {
 };
 
 export const aboutText =
-  "I am a Computer Science student at the University of Balamand, interested in software engineering and building meaningful digital solutions.\n\nThrough university, projects, and conversations with people around me, I have learned that growth is not only academic, it also comes from perspective, curiosity, discipline, and the willingness to keep learning.";
+  "I am a Computer Science student at the University of Balamand, interested in software engineering and building meaningful digital solutions.\n\nThrough university, projects, and conversations with people around me, I have learned that growth is not only academic. It also comes from perspective, curiosity, discipline, and the willingness to keep learning.";
 
 export type EducationEntry = {
   institution: string;
@@ -61,7 +61,7 @@ export const skillCategories = [
       "C",
       "C++",
       "Java",
-      "Object-Oriented Programming",
+      "Object Oriented Programming",
       "Data Structures",
       "Systems Programming"
     ]
@@ -114,26 +114,26 @@ export const projects: Project[] = [
       kind: "social-platform"
     },
     description:
-      "A C++ data structures project modeling core social platform behavior such as users, posts, notifications, likes, comments, and messaging, with emphasis on object-oriented design and practical data structure choices.",
-    techStack: ["C++", "Object-Oriented Programming", "Data Structures"],
+      "A C++ data structures project modeling core social platform behavior such as users, posts, notifications, likes, comments, and messaging, with an emphasis on object oriented design and practical data structure choices.",
+    techStack: ["C++", "Object Oriented Programming", "Data Structures"],
     highlights: [
       "Modeled social platform features using structured C++ components.",
       "Applied data structures to represent users, posts, messages, notifications, and interactions.",
       "Strengthened understanding of how abstract data structures support real application behavior.",
-      "Demonstrates academic and technical problem-solving ability."
+      "Demonstrates academic and technical problem solving ability."
     ]
   },
   {
-    title: "Secure Multi-threaded Banking System",
+    title: "Secure Multithreaded Banking System",
     status: "Operating Systems Project",
     preview: {
       kind: "banking-system"
     },
     description:
-      "A secure banking simulation built in C that demonstrates systems programming concepts including inter-process communication, multi-threading, mutex synchronization, authentication, salted password hashing, and encrypted account storage.",
+      "A secure banking simulation built in C that demonstrates systems programming concepts including interprocess communication, multithreading, mutex synchronization, authentication, salted password hashing, and encrypted account storage.",
     techStack: [
       "C",
-      "POSIX-style Systems Programming",
+      "POSIX Systems Programming",
       "Threads",
       "IPC",
       "Mutexes",
@@ -141,7 +141,7 @@ export const projects: Project[] = [
       "Makefile"
     ],
     highlights: [
-      "Designed a client-server banking simulation focused on concurrency and account integrity.",
+      "Designed a client and server banking simulation focused on concurrency and account integrity.",
       "Used synchronization concepts to prevent race conditions during account transactions.",
       "Included authentication and encrypted storage concepts to strengthen security.",
       "Demonstrates operating systems knowledge through practical implementation."
@@ -168,7 +168,7 @@ export const experienceEntries: ExperienceEntry[] = [
     dates: "August 2025 - June 2026",
     location: "Beirut Governorate, Lebanon",
     description:
-      "Representing the Developers Club by promoting its initiatives, strengthening engagement within the student community, and supporting communication between club members, students, and external audiences.",
+      "Representing the Developer Club by promoting its initiatives, strengthening engagement within the student community, and supporting communication between club members, students, and external audiences.",
     bullets: [
       "Promote club initiatives and increase awareness of events and activities.",
       "Support communication between members, students, and external audiences.",
@@ -182,17 +182,17 @@ export const experienceEntries: ExperienceEntry[] = [
     dates: "August 2018 - August 2025",
     location: "Damascus Governorate, Syria",
     description:
-      "Volunteered in long-term community initiatives supporting educational and social activities while developing teamwork, communication, and leadership skills.",
+      "Volunteered in ongoing community initiatives supporting educational and social activities while developing teamwork, communication, and leadership skills.",
     bullets: [
       "Supported educational and social community activities.",
       "Collaborated with volunteers to organize events and contribute to community engagement.",
       "Developed teamwork, communication, and leadership skills while serving individuals from diverse backgrounds.",
-      "Demonstrated long-term commitment to service, responsibility, and giving back to the community."
+      "Demonstrated sustained commitment to service, responsibility, and giving back to the community."
     ]
   },
   {
     organization: "International School of Choueifat",
-    role: "Head Prefect - Academic Department",
+    role: "Head Prefect, Academic Department",
     dates: "September 2023 - June 2024",
     location: "Damascus Governorate, Syria",
     description:
@@ -214,7 +214,7 @@ export const experienceEntries: ExperienceEntry[] = [
     bullets: [
       "Worked alongside experienced professionals in a banking environment.",
       "Observed how technology supports secure and efficient financial systems.",
-      "Strengthened analytical thinking and problem-solving skills.",
+      "Strengthened analytical thinking and problem solving skills.",
       "Developed a greater understanding of teamwork, professionalism, and technology in the financial sector."
     ]
   },
