@@ -12,13 +12,13 @@ export function V2ContactCommand() {
 
   return (
     <section
-      className="relative z-10 scroll-mt-16 overflow-hidden py-12 sm:py-20 lg:py-24"
+      className="relative z-10 scroll-mt-16 overflow-hidden py-10 sm:py-20 lg:py-24"
       id="v2-contact"
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,rgba(212,175,55,0.1),transparent_34%)]" />
-      <div className="relative z-10 mx-auto w-full max-w-[84rem] px-5 sm:px-6 lg:px-10">
+      <div className="relative z-10 mx-auto w-full max-w-[84rem] px-4 sm:px-6 lg:px-10">
         <motion.div
-          className="v2-panel-surface relative overflow-hidden rounded-sm border-gold/25 px-5 py-7 shadow-[0_30px_100px_rgba(0,0,0,0.4),0_0_70px_rgba(212,175,55,0.06)] sm:px-9 sm:py-11 lg:px-12 lg:py-14"
+          className="v2-panel-surface relative overflow-hidden rounded-sm border-gold/25 px-4 py-6 shadow-[0_30px_100px_rgba(0,0,0,0.4),0_0_70px_rgba(212,175,55,0.06)] sm:px-9 sm:py-11 lg:px-12 lg:py-14"
           initial={shouldReduceMotion ? false : { opacity: 0, y: 26 }}
           transition={{ duration: 0.58 }}
           viewport={{ amount: 0.25, once: true }}
@@ -36,11 +36,11 @@ export function V2ContactCommand() {
                   {t.contact.eyebrow}
                 </p>
               </div>
-              <h2 className="mt-5 max-w-3xl text-balance text-4xl font-semibold leading-tight tracking-[-0.045em] sm:text-5xl lg:text-6xl">
+              <h2 className="mt-4 max-w-3xl text-balance text-[2.15rem] font-semibold leading-tight tracking-[-0.045em] sm:mt-5 sm:text-5xl lg:text-6xl">
                 {t.contact.titleLead}{" "}
                 <span className="text-gold">{t.contact.titleAccent}</span>
               </h2>
-              <p className="mt-6 max-w-xl text-base leading-7 text-muted sm:text-lg sm:leading-8">
+              <p className="mt-4 max-w-xl text-base leading-7 text-muted sm:mt-6 sm:text-lg sm:leading-8">
                 {t.contact.text}
               </p>
             </div>

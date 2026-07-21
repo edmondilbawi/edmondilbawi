@@ -56,7 +56,7 @@ export function V2HeroScene({ isReady = true }: V2HeroSceneProps) {
 
   return (
     <section
-      className="relative z-10 flex min-h-[100svh] scroll-mt-16 items-center overflow-hidden border-b border-line pt-24 lg:pt-36"
+      className="relative z-10 flex min-h-[100svh] scroll-mt-16 items-center overflow-hidden border-b border-line pt-20 sm:pt-24 lg:pt-36"
       id="v2-home"
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_72%_35%,rgba(205,139,43,0.15),transparent_28%),radial-gradient(ellipse_at_56%_58%,rgba(177,110,34,0.055),transparent_42%),radial-gradient(circle_at_18%_78%,rgba(190,125,38,0.075),transparent_25%),linear-gradient(120deg,transparent_0%,rgba(255,255,255,0.022)_50%,transparent_70%)]" />
@@ -320,7 +320,7 @@ export function V2HeroScene({ isReady = true }: V2HeroSceneProps) {
         />
       </motion.svg>
 
-      <div className="relative mx-auto grid w-full max-w-[96rem] gap-8 px-5 pb-10 sm:gap-10 sm:px-6 sm:pb-14 lg:grid-cols-12 lg:items-center lg:gap-12 lg:px-[3.25rem] lg:pb-10">
+      <div className="relative mx-auto grid w-full max-w-[96rem] gap-6 px-4 pb-8 sm:gap-10 sm:px-6 sm:pb-14 lg:grid-cols-12 lg:items-center lg:gap-12 lg:px-[3.25rem] lg:pb-10">
         <div className="min-w-0 lg:relative lg:top-5 lg:col-span-6">
           <motion.div
             animate={
@@ -339,7 +339,7 @@ export function V2HeroScene({ isReady = true }: V2HeroSceneProps) {
             animate={
               isReady ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
             }
-            className="mt-7 text-balance text-5xl font-semibold leading-[0.9] tracking-[-0.05em] text-ink sm:mt-10 sm:text-7xl lg:text-[6.9rem] lg:leading-[0.85]"
+            className="mt-6 text-balance text-[2.9rem] font-semibold leading-[0.92] tracking-[-0.05em] text-ink sm:mt-10 sm:text-7xl lg:text-[6.9rem] lg:leading-[0.85]"
             initial={false}
             transition={itemTransition(0.14)}
           >
@@ -350,7 +350,7 @@ export function V2HeroScene({ isReady = true }: V2HeroSceneProps) {
             animate={
               isReady ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }
             }
-            className="mt-6 max-w-[28rem] text-base leading-7 text-muted sm:mt-9 sm:text-lg sm:leading-8 lg:text-xl lg:leading-9"
+            className="mt-5 max-w-[28rem] text-base leading-7 text-muted sm:mt-9 sm:text-lg sm:leading-8 lg:text-xl lg:leading-9"
             initial={false}
             transition={itemTransition(0.28)}
           >
@@ -360,12 +360,12 @@ export function V2HeroScene({ isReady = true }: V2HeroSceneProps) {
             animate={
               isReady ? { opacity: 1, y: 0 } : { opacity: 0, y: 14 }
             }
-            className="mt-6 sm:mt-7"
+            className="mt-5 sm:mt-7"
             initial={false}
             transition={itemTransition(0.4)}
           >
             <Button
-              className="min-h-14 min-w-[13.75rem] border-gold/30 bg-gold/[0.055] text-base shadow-[0_16px_45px_rgba(0,0,0,0.32)] sm:min-h-[4.1rem]"
+              className="min-h-14 w-full border-gold/30 bg-gold/[0.055] text-base shadow-[0_16px_45px_rgba(0,0,0,0.32)] sm:min-h-[4.1rem] sm:w-auto sm:min-w-[13.75rem]"
               download
               href="/cv/edmond-ilbawi-cv.pdf"
               icon={<Download aria-hidden size={17} />}
@@ -379,11 +379,11 @@ export function V2HeroScene({ isReady = true }: V2HeroSceneProps) {
             animate={
               isReady ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }
             }
-            className="mt-6 grid max-w-[40.5rem] divide-y divide-white/[0.09] overflow-hidden border-y border-white/[0.12] bg-[linear-gradient(90deg,rgba(212,175,55,0.035),transparent_52%,rgba(255,255,255,0.012))] sm:mt-8 sm:grid-cols-2 sm:divide-x sm:divide-y-0"
+            className="mt-5 grid max-w-[40.5rem] grid-cols-2 divide-x divide-white/[0.09] overflow-hidden border-y border-white/[0.12] bg-[linear-gradient(90deg,rgba(212,175,55,0.035),transparent_52%,rgba(255,255,255,0.012))] sm:mt-8"
             initial={false}
             transition={itemTransition(0.52)}
           >
-            <div className="px-1 py-4 sm:px-6 sm:py-5">
+            <div className="px-2 py-3.5 sm:px-6 sm:py-5">
               <p className="font-mono text-[9px] uppercase tracking-[0.22em] text-gold">
                 Age
               </p>
@@ -391,7 +391,7 @@ export function V2HeroScene({ isReady = true }: V2HeroSceneProps) {
                 21 years old
               </p>
             </div>
-            <div className="px-1 py-4 sm:px-6 sm:py-5">
+            <div className="px-3 py-3.5 sm:px-6 sm:py-5">
               <p className="font-mono text-[9px] uppercase tracking-[0.22em] text-gold">
                 Location
               </p>
@@ -417,7 +417,7 @@ export function V2HeroScene({ isReady = true }: V2HeroSceneProps) {
             ease: "easeOut"
           }}
         >
-          <div className="relative flex min-h-[25rem] w-full items-center justify-center sm:min-h-[34rem] lg:min-h-[38rem] lg:justify-end">
+          <div className="relative flex min-h-[22rem] w-full items-center justify-center sm:min-h-[34rem] lg:min-h-[38rem] lg:justify-end">
             <motion.div
               animate={
                 shouldReduceMotion
@@ -434,7 +434,7 @@ export function V2HeroScene({ isReady = true }: V2HeroSceneProps) {
             />
             <motion.div
               animate={{ y: 0 }}
-              className="relative z-10 w-[84%] min-w-0 max-w-[26.75rem] sm:w-[88%]"
+              className="relative z-10 w-[78%] min-w-0 max-w-[26.75rem] sm:w-[88%]"
               transition={{ duration: 0.45, ease: "easeOut" }}
             >
               <span

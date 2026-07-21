@@ -18,21 +18,21 @@ export function V2ProfessionalModules() {
 
   return (
     <section
-      className="v2-section-surface relative z-10 scroll-mt-16 overflow-hidden py-12 sm:py-20 lg:py-28"
+      className="v2-section-surface relative z-10 scroll-mt-16 overflow-hidden py-10 sm:py-20 lg:py-28"
       id="v2-about"
     >
       <div className="pointer-events-none absolute inset-0 bg-subtle-grid bg-[length:68px_68px] opacity-[0.07]" />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(212,175,55,0.065),transparent_29%)]" />
-      <div className="relative z-10 mx-auto w-full max-w-[94rem] px-5 sm:px-6 lg:px-10">
-        <div className="grid items-start gap-8 sm:gap-12 lg:grid-cols-[14rem_minmax(0,1fr)] lg:gap-12 xl:grid-cols-[15rem_minmax(0,1fr)] xl:gap-14">
+      <div className="relative z-10 mx-auto w-full max-w-[94rem] px-4 sm:px-6 lg:px-10">
+        <div className="grid items-start gap-6 sm:gap-12 lg:grid-cols-[14rem_minmax(0,1fr)] lg:gap-12 xl:grid-cols-[15rem_minmax(0,1fr)] xl:gap-14">
           <aside className="lg:sticky lg:top-28 lg:h-fit">
-            <h2 className="text-4xl font-semibold tracking-[-0.04em] sm:text-5xl lg:text-[2.8rem] xl:text-5xl">
+            <h2 className="text-[2.15rem] font-semibold tracking-[-0.04em] sm:text-5xl lg:text-[2.8rem] xl:text-5xl">
               {t.about.title}
               {t.about.titleAccent ? (
                 <span className="block text-muted">{t.about.titleAccent}</span>
               ) : null}
             </h2>
-            <p className="mt-4 max-w-xs text-sm leading-7 text-muted sm:mt-6">
+            <p className="mt-3 max-w-sm text-sm leading-6 text-muted sm:mt-6 sm:max-w-xs sm:leading-7">
               {t.about.subtitle}
             </p>
             <div className="mt-10 hidden max-w-[11rem] items-center gap-3 lg:flex">
@@ -41,9 +41,9 @@ export function V2ProfessionalModules() {
             </div>
           </aside>
 
-          <div className="grid items-start gap-5 xl:grid-cols-12 xl:gap-6">
+          <div className="grid items-start gap-4 sm:gap-5 xl:grid-cols-12 xl:gap-6">
             <motion.article
-              className="v2-panel-surface relative self-start overflow-hidden rounded-sm border-gold/20 p-5 sm:p-8 xl:col-span-7"
+              className="v2-panel-surface relative self-start overflow-hidden rounded-sm border-gold/20 p-4 sm:p-8 xl:col-span-7"
               initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}
               transition={{ duration: 0.52 }}
               viewport={{ amount: 0.25, once: true }}
@@ -55,10 +55,10 @@ export function V2ProfessionalModules() {
                   {t.about.perspective}
                 </span>
               </div>
-              <h3 className="mt-4 max-w-2xl text-balance text-3xl font-semibold leading-tight tracking-[-0.03em] sm:mt-5 sm:text-[2.15rem]">
+              <h3 className="mt-3 max-w-2xl text-balance text-[1.75rem] font-semibold leading-tight tracking-[-0.03em] sm:mt-5 sm:text-[2.15rem]">
                 {t.about.heading}
               </h3>
-              <div className="mt-5 grid gap-4 text-sm leading-7 text-muted sm:mt-6 sm:grid-cols-2 sm:gap-5 sm:text-base">
+              <div className="mt-4 grid gap-3.5 text-sm leading-6 text-muted sm:mt-6 sm:grid-cols-2 sm:gap-5 sm:text-base sm:leading-7">
                 {t.about.paragraphs.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
                 ))}
@@ -76,7 +76,7 @@ export function V2ProfessionalModules() {
             </motion.article>
 
             <motion.div
-              className="grid gap-5 xl:col-span-5"
+              className="grid gap-4 sm:gap-5 xl:col-span-5"
               initial={shouldReduceMotion ? false : { opacity: 0, x: 24 }}
               transition={{ delay: 0.08, duration: 0.52 }}
               viewport={{ amount: 0.22, once: true }}
@@ -90,7 +90,7 @@ export function V2ProfessionalModules() {
               </header>
               {educationEntries.map((entry, index) => (
                 <article
-                  className="v2-card-surface group relative overflow-hidden rounded-sm p-5 transition-all duration-200 hover:border-gold/35 sm:p-6"
+                  className="v2-card-surface group relative overflow-hidden rounded-sm p-4 transition-all duration-200 hover:border-gold/35 sm:p-6"
                   key={entry.institution}
                 >
                   <div className="absolute right-0 top-0 h-full w-px bg-gradient-to-b from-gold/50 via-transparent to-transparent" />
@@ -120,7 +120,7 @@ export function V2ProfessionalModules() {
             </motion.div>
 
             <motion.article
-              className="v2-panel-surface relative scroll-mt-24 overflow-hidden rounded-sm border-t-gold/25 p-5 sm:p-8 xl:col-span-12"
+              className="v2-panel-surface relative scroll-mt-24 overflow-hidden rounded-sm border-t-gold/25 p-4 sm:p-8 xl:col-span-12"
               id="v2-skills"
               initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}
               transition={{ duration: 0.52 }}
@@ -131,7 +131,7 @@ export function V2ProfessionalModules() {
                 aria-hidden
                 className="pointer-events-none absolute inset-0 bg-[linear-gradient(145deg,rgba(16,16,14,0.96),rgba(6,6,6,0.97))]"
               />
-              <div className="relative z-10 flex flex-col gap-5 border-b border-line pb-6 sm:flex-row sm:items-end sm:justify-between">
+              <div className="relative z-10 flex flex-col gap-3 border-b border-line pb-5 sm:flex-row sm:items-end sm:justify-between sm:gap-5 sm:pb-6">
                 <div>
                   <div className="flex items-center gap-3 text-gold">
                     <Layers3 aria-hidden size={19} />
@@ -139,7 +139,7 @@ export function V2ProfessionalModules() {
                       {t.skills.eyebrow}
                     </p>
                   </div>
-                  <h3 className="mt-4 text-3xl font-semibold tracking-[-0.03em] sm:text-4xl">
+                  <h3 className="mt-3 text-[1.75rem] font-semibold tracking-[-0.03em] sm:mt-4 sm:text-4xl">
                     {t.skills.title}
                   </h3>
                 </div>

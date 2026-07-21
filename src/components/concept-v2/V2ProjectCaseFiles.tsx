@@ -87,17 +87,17 @@ export function V2ProjectCaseFiles() {
 
   return (
     <section
-      className="v2-section-surface relative z-10 scroll-mt-16 overflow-hidden py-12 sm:py-20 lg:py-24"
+      className="v2-section-surface relative z-10 scroll-mt-16 overflow-hidden py-10 sm:py-20 lg:py-24"
       id="v2-projects"
     >
       <div className="pointer-events-none absolute -right-36 top-12 h-96 w-96 rounded-full bg-gold/[0.045] blur-3xl" />
-      <div className="relative z-10 mx-auto w-full max-w-[90rem] px-5 sm:px-6 lg:px-10">
+      <div className="relative z-10 mx-auto w-full max-w-[90rem] px-4 sm:px-6 lg:px-10">
         <header className="flex flex-col gap-4 sm:gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div>
             <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.24em] text-gold">
               {t.projects.eyebrow}
             </p>
-            <h2 className="mt-4 text-balance text-4xl font-semibold tracking-[-0.04em] sm:text-5xl lg:text-[3.5rem]">
+            <h2 className="mt-3 text-balance text-[2.15rem] font-semibold tracking-[-0.04em] sm:mt-4 sm:text-5xl lg:text-[3.5rem]">
               {t.projects.title}
             </h2>
           </div>
@@ -106,7 +106,7 @@ export function V2ProjectCaseFiles() {
           </p>
         </header>
 
-        <div className="mt-8 grid gap-5 sm:mt-10 lg:grid-cols-2">
+        <div className="mt-7 grid gap-4 sm:mt-10 sm:gap-5 lg:grid-cols-2">
           {projects.map((project, index) => (
             <motion.article
               className="v2-panel-surface group overflow-hidden rounded-sm transition-all duration-200 hover:-translate-y-1 hover:border-gold/35 hover:shadow-gold-soft"

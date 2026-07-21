@@ -28,12 +28,12 @@ export function V2ExperienceLogs() {
 
   return (
     <section
-      className="v2-section-surface relative z-10 scroll-mt-24 overflow-hidden py-12 sm:py-20 lg:py-24"
+      className="v2-section-surface relative z-10 scroll-mt-24 overflow-hidden py-10 sm:py-20 lg:py-24"
       id="v2-experience"
     >
       <div className="pointer-events-none absolute inset-y-0 left-[12%] hidden w-px bg-gradient-to-b from-transparent via-gold/15 to-transparent lg:block" />
-      <div className="relative z-10 mx-auto w-full max-w-[88rem] px-5 sm:px-6 lg:px-10">
-        <div className="grid gap-8 sm:gap-10 lg:grid-cols-[0.62fr_1.38fr] lg:gap-12">
+      <div className="relative z-10 mx-auto w-full max-w-[88rem] px-4 sm:px-6 lg:px-10">
+        <div className="grid gap-7 sm:gap-10 lg:grid-cols-[0.62fr_1.38fr] lg:gap-12">
           <motion.header
             className="v2-experience-heading-motion lg:sticky lg:top-28 lg:h-fit"
             initial={shouldReduceMotion ? false : { opacity: 0, x: -24 }}
@@ -44,7 +44,7 @@ export function V2ExperienceLogs() {
             <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.24em] text-gold">
               {t.experience.eyebrow}
             </p>
-            <h2 className="mt-4 text-balance text-4xl font-semibold tracking-[-0.04em] sm:text-5xl lg:text-[3.5rem]">
+            <h2 className="mt-3 text-balance text-[2.15rem] font-semibold tracking-[-0.04em] sm:mt-4 sm:text-5xl lg:text-[3.5rem]">
               {t.experience.title}
               <span className="block text-muted">
                 {t.experience.titleAccent}
@@ -53,7 +53,7 @@ export function V2ExperienceLogs() {
             <p className="mt-5 max-w-md text-base leading-7 text-muted">
               {t.experience.subtitle}
             </p>
-            <div className="mt-8 flex items-center gap-3 text-gold">
+            <div className="mt-6 flex items-center gap-3 text-gold sm:mt-8">
               <Activity aria-hidden size={17} />
               <span className="font-mono text-[9px] uppercase tracking-[0.2em]">
                 {t.experience.learning}
@@ -62,7 +62,7 @@ export function V2ExperienceLogs() {
             </div>
           </motion.header>
 
-          <div className="relative pl-6 sm:pl-10">
+          <div className="relative pl-5 sm:pl-10">
             <div
               aria-hidden
               className="absolute bottom-24 left-1 top-5 w-px bg-gradient-to-b from-gold/75 via-gold/35 to-transparent sm:left-2"

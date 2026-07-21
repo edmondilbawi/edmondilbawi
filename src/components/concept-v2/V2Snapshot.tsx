@@ -26,11 +26,11 @@ export function V2Snapshot() {
 
   return (
     <section
-      className="v2-section-surface relative z-10 -mt-4 scroll-mt-16 overflow-hidden py-12 sm:-mt-6 sm:py-20 lg:py-24"
+      className="v2-section-surface relative z-10 -mt-3 scroll-mt-16 overflow-hidden py-10 sm:-mt-6 sm:py-20 lg:py-24"
       id="v2-snapshot"
     >
-      <div className="relative z-10 mx-auto w-full max-w-[90rem] px-5 sm:px-6 lg:px-10">
-        <div className="grid items-center gap-8 sm:gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-12">
+      <div className="relative z-10 mx-auto w-full max-w-[90rem] px-4 sm:px-6 lg:px-10">
+        <div className="grid items-center gap-7 sm:gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-12">
           <motion.div
             initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}
             transition={{ duration: 0.55, ease: "easeOut" }}
@@ -43,7 +43,7 @@ export function V2Snapshot() {
               </p>
               <span className="h-px flex-1 bg-gold/25" />
             </div>
-            <h2 className="mt-4 max-w-xl text-balance text-4xl font-semibold leading-tight tracking-[-0.035em] sm:text-5xl lg:text-[3.25rem]">
+            <h2 className="mt-3 max-w-xl text-balance text-[2.15rem] font-semibold leading-tight tracking-[-0.035em] sm:mt-4 sm:text-5xl lg:text-[3.25rem]">
               {t.snapshot.title}
               {t.snapshot.titleAccent ? (
                 <span className="block text-muted">
@@ -55,7 +55,7 @@ export function V2Snapshot() {
               {t.snapshot.text}
             </p>
 
-            <div className="relative mx-auto mt-7 w-fit sm:mt-8 lg:mx-0">
+            <div className="relative mx-auto mt-6 w-fit sm:mt-8 lg:mx-0">
               <div className="pointer-events-none absolute -inset-10 rounded-full bg-[radial-gradient(circle,rgba(205,139,43,0.11),transparent_68%)] blur-xl" />
               <div className="pointer-events-none absolute left-[calc(100%-0.25rem)] top-1/2 hidden h-px w-28 bg-gradient-to-r from-gold/30 to-transparent lg:block" />
               <motion.div
@@ -90,7 +90,7 @@ export function V2Snapshot() {
 
               return (
                 <motion.article
-                  className={`v2-card-surface group relative min-h-40 overflow-hidden rounded-sm p-4 transition-all duration-200 hover:-translate-y-1 hover:border-gold/35 hover:shadow-gold-soft sm:min-h-44 sm:p-5 ${
+                  className={`v2-card-surface group relative min-h-36 overflow-hidden rounded-sm p-4 transition-all duration-200 hover:-translate-y-1 hover:border-gold/35 hover:shadow-gold-soft sm:min-h-44 sm:p-5 ${
                     index === 2
                       ? "sm:col-span-2 sm:min-h-40 sm:pr-[36%]"
                       : ""

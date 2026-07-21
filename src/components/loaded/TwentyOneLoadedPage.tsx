@@ -12,6 +12,7 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import {
   ArrowLeft,
   BookOpen,
+  CircleHelp,
   Mail,
   Send,
   Sparkles
@@ -348,7 +349,7 @@ export function TwentyOneLoadedPage() {
       <AmbientExperience vibrant />
 
       <header className="fixed inset-x-0 top-0 z-40 border-b border-white/[0.07] bg-background/85 backdrop-blur-xl">
-        <div className="mx-auto flex min-h-16 w-full max-w-[96rem] items-center justify-between gap-2 px-5 sm:gap-4 sm:px-6 lg:min-h-[5.25rem] lg:px-8">
+        <div className="mx-auto flex min-h-16 w-full max-w-[96rem] items-center justify-between gap-2 px-4 sm:gap-4 sm:px-6 lg:min-h-[5.25rem] lg:px-8">
           <Link
             className="focus-ring group flex min-h-11 shrink-0 items-center gap-3 rounded-sm sm:gap-4"
             href="/"
@@ -379,7 +380,7 @@ export function TwentyOneLoadedPage() {
         </div>
       </header>
 
-      <main className="relative isolate overflow-hidden pb-12 pt-24 sm:pb-20 sm:pt-32 lg:pb-24 lg:pt-36">
+      <main className="relative isolate overflow-hidden pb-10 pt-[5.5rem] sm:pb-20 sm:pt-32 lg:pb-24 lg:pt-36">
         <div className="pointer-events-none absolute inset-0 -z-20 bg-[radial-gradient(ellipse_at_50%_4%,rgba(212,175,55,0.13),transparent_28%),radial-gradient(ellipse_at_92%_52%,rgba(212,175,55,0.07),transparent_24%),radial-gradient(ellipse_at_8%_84%,rgba(212,175,55,0.055),transparent_22%)]" />
         <div className="pointer-events-none absolute inset-0 -z-20 bg-subtle-grid bg-[length:68px_68px] opacity-[0.04] [mask-image:linear-gradient(to_bottom,black,transparent_88%)]" />
         <svg
@@ -424,23 +425,23 @@ export function TwentyOneLoadedPage() {
               Digital Journal
             </p>
             <h1
-              className="mt-4 text-5xl font-semibold tracking-[-0.05em] sm:text-6xl lg:text-7xl"
+              className="mt-3 text-[2.75rem] font-semibold tracking-[-0.05em] sm:mt-4 sm:text-6xl lg:text-7xl"
               id="wisdom-bar-title"
             >
               21% Loaded
             </h1>
-            <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-ink/75 sm:text-lg sm:leading-8">
+            <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-ink/75 sm:mt-5 sm:text-lg sm:leading-8">
               “21% Loaded” means I am still becoming — not complete, but shaped
               by reflection, growth, and experience.
             </p>
 
-            <div className="mx-auto mt-9 max-w-4xl text-left">
-              <div className="flex items-end justify-between gap-4">
+            <div className="mx-auto mt-7 max-w-4xl text-left sm:mt-9">
+              <div className="flex items-end justify-between gap-3">
                 <div>
                   <span className="text-3xl font-semibold text-gold">21%</span>
-                  <span className="ml-3 text-base text-ink/75">Still becoming</span>
+                  <span className="ml-2 text-sm text-ink/75 sm:ml-3 sm:text-base">Still becoming</span>
                 </div>
-                <span className="text-[0.9375rem] font-medium text-ink/70">
+                <span className="text-sm font-medium text-ink/70 sm:text-[0.9375rem]">
                   21 / 100 loaded
                 </span>
               </div>
@@ -458,7 +459,7 @@ export function TwentyOneLoadedPage() {
                 />
               </div>
 
-              <div className="mt-6 space-y-4 border-y border-white/[0.09] py-5">
+              <div className="mt-5 space-y-4 border-y border-white/[0.09] py-4 sm:mt-6 sm:py-5">
                 <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-[0.9375rem] font-medium text-ink/70 sm:justify-start">
                   <span>Five roots</span>
                   <span>Twenty-one reflections</span>
@@ -481,7 +482,7 @@ export function TwentyOneLoadedPage() {
             </div>
           </section>
 
-          <div className="mx-auto mt-12 max-w-6xl space-y-7 sm:mt-16 sm:space-y-10">
+          <div className="mx-auto mt-9 max-w-6xl space-y-6 sm:mt-16 sm:space-y-10">
             <section
               aria-labelledby="companion-title"
               className="v2-panel-surface relative overflow-hidden rounded-sm border-gold/30 p-4 shadow-[0_24px_90px_rgba(0,0,0,0.42),0_0_55px_rgba(212,175,55,0.07)] sm:p-8 lg:p-10"
@@ -490,11 +491,11 @@ export function TwentyOneLoadedPage() {
               <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/70 to-transparent" />
               <div className="flex flex-wrap items-start justify-between gap-5">
                 <div className="flex max-w-2xl items-start gap-3">
-                  <span className="grid h-12 w-12 shrink-0 place-items-center rounded-sm border border-gold/30 bg-gold/[0.08] text-gold shadow-[0_0_24px_rgba(212,175,55,0.08)]">
+                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-sm border border-gold/30 bg-gold/[0.08] text-gold shadow-[0_0_24px_rgba(212,175,55,0.08)] sm:h-12 sm:w-12">
                     <Sparkles aria-hidden size={18} />
                   </span>
                   <div>
-                    <p className="text-[0.9375rem] font-semibold uppercase tracking-[0.1em] text-gold">
+                    <p className="text-sm font-semibold uppercase tracking-[0.08em] text-gold sm:text-[0.9375rem] sm:tracking-[0.1em]">
                       Guided Journal Assistant
                     </p>
                     <h2
@@ -503,7 +504,7 @@ export function TwentyOneLoadedPage() {
                     >
                       Edmond’s Assistant
                     </h2>
-                    <p className="mt-3 max-w-xl text-base leading-7 text-ink/75">
+                    <p className="mt-2.5 max-w-xl text-base leading-7 text-ink/75 sm:mt-3">
                       I can help you choose one of the 21 reflections and guide
                       you through the journal.
                     </p>
@@ -511,13 +512,36 @@ export function TwentyOneLoadedPage() {
                 </div>
               </div>
 
+              <aside
+                aria-label="How to use 21% Loaded"
+                className="relative mt-5 flex items-start gap-3 overflow-hidden rounded-sm border border-gold/20 bg-gold/[0.035] p-3.5 sm:mt-7 sm:p-4"
+              >
+                <span
+                  aria-hidden
+                  className="absolute inset-y-0 left-0 w-px bg-gradient-to-b from-transparent via-gold/65 to-transparent"
+                />
+                <CircleHelp
+                  aria-hidden
+                  className="mt-0.5 shrink-0 text-gold"
+                  size={18}
+                />
+                <p className="text-sm leading-6 text-ink/78 sm:text-base sm:leading-7">
+                  <span className="font-semibold text-ink">
+                    How to use 21% Loaded:
+                  </span>{" "}
+                  Enter your name, then choose any reflection by number or
+                  title. Edmond’s Assistant will guide you through the
+                  experience.
+                </p>
+              </aside>
+
               <div
                 aria-live="polite"
-                className="mt-8 max-w-none space-y-5 sm:mt-10 sm:space-y-6"
+                className="mt-6 max-w-none space-y-4 sm:mt-10 sm:space-y-6"
                 id="companion-transcript"
               >
                 {chatStep === "name" ? (
-                  <div className="relative w-fit max-w-[92%] overflow-hidden rounded-sm border border-gold/20 bg-gold/[0.035] p-4 pl-5 text-base leading-7 text-ink/90 shadow-[0_12px_35px_rgba(0,0,0,0.18)] sm:max-w-[80%]">
+                  <div className="relative w-fit max-w-full overflow-hidden rounded-sm border border-gold/20 bg-gold/[0.035] p-3.5 pl-5 text-base leading-7 text-ink/90 shadow-[0_12px_35px_rgba(0,0,0,0.18)] sm:max-w-[80%] sm:p-4 sm:pl-5">
                     <span className="absolute inset-y-0 left-0 w-px bg-gradient-to-b from-transparent via-gold/70 to-transparent" />
                     <p className="text-[0.9375rem] font-semibold text-gold">
                       Edmond’s Assistant
@@ -578,7 +602,7 @@ export function TwentyOneLoadedPage() {
                     {chapterIntroVisible ? (
                     <motion.div
                       animate={{ opacity: 1, y: 0 }}
-                      className="relative max-w-full overflow-hidden rounded-sm border border-gold/20 bg-gold/[0.035] p-4 pl-5 text-base leading-7 text-ink/90 sm:max-w-[92%] sm:p-5 sm:pl-6"
+                      className="relative max-w-full overflow-hidden rounded-sm border border-gold/20 bg-gold/[0.035] p-3.5 pl-5 text-base leading-7 text-ink/90 sm:max-w-[92%] sm:p-5 sm:pl-6"
                       initial={
                         prefersReducedMotion ? false : { opacity: 0, y: 8 }
                       }
@@ -608,7 +632,7 @@ export function TwentyOneLoadedPage() {
                           return (
                             <button
                               aria-pressed={isSelected}
-                              className={`focus-ring min-h-11 rounded-full border px-4 py-2 text-base font-semibold transition-all duration-200 disabled:cursor-wait disabled:opacity-50 ${
+                              className={`focus-ring min-h-11 rounded-full border px-3.5 py-2 text-sm font-semibold transition-all duration-200 disabled:cursor-wait disabled:opacity-50 sm:px-4 sm:text-base ${
                                 isSelected
                                   ? "border-gold/55 bg-gold/[0.12] text-gold"
                                   : "border-white/15 bg-black/20 text-ink/70 hover:border-gold/35 hover:text-ink"
@@ -628,7 +652,7 @@ export function TwentyOneLoadedPage() {
                           );
                         })}
                       </div>
-                      <div className="mt-5 max-h-[28rem] overflow-y-auto rounded-sm border border-white/[0.1] bg-black/25 p-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.02)] sm:mt-6 sm:max-h-[34rem] sm:p-4">
+                      <div className="mt-4 max-h-[24rem] overflow-y-auto rounded-sm border border-white/[0.1] bg-black/25 p-1.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.02)] sm:mt-6 sm:max-h-[34rem] sm:p-4">
                         <motion.ol
                           animate={{ opacity: 1, y: 0 }}
                           className="grid gap-2 sm:grid-cols-2 sm:gap-3"
@@ -650,7 +674,7 @@ export function TwentyOneLoadedPage() {
                               <li key={chapter.id}>
                                 <button
                                   aria-pressed={isSelected}
-                                  className={`focus-ring group grid min-h-16 w-full grid-cols-[auto_minmax(0,1fr)] items-start gap-x-3 rounded-sm border px-4 py-3.5 text-left transition-all duration-200 disabled:cursor-wait disabled:opacity-50 ${
+                                  className={`focus-ring group grid min-h-16 w-full grid-cols-[auto_minmax(0,1fr)] items-start gap-x-3 rounded-sm border px-3 py-3 text-left transition-all duration-200 disabled:cursor-wait disabled:opacity-50 sm:px-4 sm:py-3.5 ${
                                     isSelected
                                       ? "border-gold/35 bg-gold/[0.09] text-gold shadow-[inset_0_0_18px_rgba(212,175,55,0.04)]"
                                       : "border-transparent text-ink/75 hover:border-gold/20 hover:bg-gold/[0.055] hover:text-ink"
@@ -766,7 +790,7 @@ export function TwentyOneLoadedPage() {
                 {selectedChapter ? (
                   <motion.div
                     animate={{ opacity: 1, y: 0 }}
-                    className="relative w-fit max-w-[92%] overflow-hidden rounded-sm border border-gold/30 bg-gold/[0.045] p-4 pl-5 shadow-[0_16px_45px_rgba(0,0,0,0.24),0_0_30px_rgba(212,175,55,0.04)] sm:max-w-[82%] sm:p-5 sm:pl-6"
+                      className="relative w-fit max-w-full overflow-hidden rounded-sm border border-gold/30 bg-gold/[0.045] p-4 pl-5 shadow-[0_16px_45px_rgba(0,0,0,0.24),0_0_30px_rgba(212,175,55,0.04)] sm:max-w-[82%] sm:p-5 sm:pl-6"
                     data-selected-chapter={selectedChapter.id}
                     initial={
                       prefersReducedMotion ? false : { opacity: 0, y: 8 }
@@ -805,7 +829,7 @@ export function TwentyOneLoadedPage() {
 
               <form
                 aria-busy={isAssistantProcessing}
-                className="mt-8 max-w-none"
+                className="mt-6 max-w-none sm:mt-8"
                 onSubmit={handleChatSubmit}
               >
                 <label className="sr-only" htmlFor="companion-input">

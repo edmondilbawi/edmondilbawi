@@ -35,11 +35,11 @@ export function V2CurrentBuild() {
 
   return (
     <section
-      className="v2-section-surface relative z-10 scroll-mt-16 overflow-hidden py-12 sm:py-20 lg:py-24"
+      className="v2-section-surface relative z-10 scroll-mt-16 overflow-hidden py-10 sm:py-20 lg:py-24"
       id="v2-current-build"
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_78%_28%,rgba(212,175,55,0.075),transparent_30%)]" />
-      <div className="relative z-10 mx-auto w-full max-w-[88rem] px-5 sm:px-6 lg:px-10">
+      <div className="relative z-10 mx-auto w-full max-w-[88rem] px-4 sm:px-6 lg:px-10">
         <motion.header
           className="max-w-4xl"
           initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
@@ -47,20 +47,20 @@ export function V2CurrentBuild() {
           viewport={{ amount: 0.4, once: true }}
           whileInView={{ opacity: 1, y: 0 }}
         >
-          <h2 className="text-balance text-4xl font-semibold tracking-[-0.04em] sm:text-5xl lg:text-[3.5rem]">
+          <h2 className="text-balance text-[2.15rem] font-semibold tracking-[-0.04em] sm:text-5xl lg:text-[3.5rem]">
             {t.currentFocus.title}
           </h2>
-          <span className="mt-6 block h-px w-32 bg-gradient-to-r from-gold/65 to-transparent" />
+          <span className="mt-5 block h-px w-32 bg-gradient-to-r from-gold/65 to-transparent sm:mt-6" />
         </motion.header>
 
-        <div className="mt-8 grid gap-4 sm:mt-9 lg:grid-cols-12">
+        <div className="mt-7 grid gap-4 sm:mt-9 lg:grid-cols-12">
           {areaVisuals.map((area, index) => {
             const Icon = area.icon;
             const copy = t.currentFocus.areas[index];
 
             return (
               <motion.article
-                className={`v2-card-surface group relative flex h-full min-h-[11.5rem] flex-col overflow-hidden rounded-sm p-5 transition-all duration-200 hover:-translate-y-1 hover:border-gold/40 hover:shadow-gold-soft sm:min-h-56 sm:p-6 ${area.layout}`}
+                className={`v2-card-surface group relative flex h-full min-h-[10.5rem] flex-col overflow-hidden rounded-sm p-4 transition-all duration-200 hover:-translate-y-1 hover:border-gold/40 hover:shadow-gold-soft sm:min-h-56 sm:p-6 ${area.layout}`}
                 initial={
                   shouldReduceMotion
                     ? false
@@ -77,7 +77,7 @@ export function V2CurrentBuild() {
                     <Icon aria-hidden size={19} />
                   </span>
                 </div>
-                <h3 className="relative mt-5 text-2xl font-semibold tracking-[-0.02em] text-ink sm:mt-6">
+                <h3 className="relative mt-4 text-xl font-semibold tracking-[-0.02em] text-ink sm:mt-6 sm:text-2xl">
                   {copy.title}
                 </h3>
                 <p className="relative mt-3 max-w-2xl text-sm leading-6 text-muted sm:mt-4 sm:text-base sm:leading-7">

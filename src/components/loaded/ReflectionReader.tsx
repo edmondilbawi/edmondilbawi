@@ -27,6 +27,30 @@ type ReadingMode = "dark" | "light";
 
 const READING_MODE_STORAGE_KEY = "twentyOneLoadedReadingMode";
 
+const RELATED_REFLECTION_IDS: Record<string, readonly string[]> = {
+  "01": ["06", "19", "12"],
+  "02": ["03", "04", "16"],
+  "03": ["04", "16", "02"],
+  "04": ["03", "13", "18"],
+  "05": ["18", "08", "20"],
+  "06": ["19", "08", "01"],
+  "07": ["10", "13", "18"],
+  "08": ["06", "05", "17"],
+  "09": ["19", "12", "02"],
+  "10": ["07", "13", "20"],
+  "11": ["15", "17", "12"],
+  "12": ["20", "04", "09"],
+  "13": ["07", "18", "10"],
+  "14": ["20", "12", "16"],
+  "15": ["11", "20", "17"],
+  "16": ["03", "04", "14"],
+  "17": ["11", "15", "08"],
+  "18": ["05", "07", "13"],
+  "19": ["06", "09", "01"],
+  "20": ["12", "15", "14"],
+  "21": ["01", "19", "20"]
+};
+
 function formatContribution(value: number) {
   return `+${value.toFixed(2).replace(/\.00$/, "").replace(/(\.\d)0$/, "$1")}%`;
 }
@@ -107,6 +131,11 @@ export function ReflectionReader({
   const displayedParagraphs = getDisplayedReflectionParagraphs(
     activeChapter.text
   );
+  const relatedChapters = (RELATED_REFLECTION_IDS[activeChapter.id] ?? [])
+    .map((chapterId) =>
+      wisdomChapters.find((chapter) => chapter.id === chapterId)
+    )
+    .filter((chapter): chapter is WisdomChapterData => Boolean(chapter));
   const quietButtonClassName = clsx(
     "focus-ring inline-flex min-h-11 items-center justify-center gap-2 rounded-sm border px-3 text-base font-semibold transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-40",
     isLightMode
@@ -201,7 +230,7 @@ export function ReflectionReader({
               : "border-white/[0.08] bg-background/90"
           )}
         >
-          <div className="mx-auto flex min-h-[3.75rem] max-w-6xl flex-nowrap items-center justify-between gap-2 px-4 py-2 sm:min-h-16 sm:gap-3 sm:px-6 sm:py-3 lg:px-8">
+          <div className="mx-auto flex min-h-[3.75rem] max-w-6xl flex-nowrap items-center justify-between gap-2 px-3 py-2 sm:min-h-16 sm:gap-3 sm:px-6 sm:py-3 lg:px-8">
             <button
               className={clsx("group", quietButtonClassName)}
               onClick={onClose}
@@ -213,7 +242,8 @@ export function ReflectionReader({
                 className="transition-transform duration-200 group-hover:-translate-x-1"
                 size={15}
               />
-              Back to companion
+              <span className="sm:hidden">Back</span>
+              <span className="hidden sm:inline">Back to companion</span>
             </button>
 
             <div className="flex flex-nowrap items-center justify-end gap-2">
@@ -247,7 +277,7 @@ export function ReflectionReader({
               isLightMode ? "border-[#d7c7a4]/75" : "border-white/[0.07]"
             )}
           >
-            <div className="mx-auto flex min-h-14 max-w-6xl items-center gap-2 px-4 py-1.5 sm:min-h-11 sm:px-6 sm:py-0 lg:px-8">
+            <div className="mx-auto flex min-h-14 max-w-6xl items-center gap-2 px-3 py-0.5 sm:min-h-11 sm:px-6 sm:py-0 lg:px-8">
               <p className="flex min-w-0 flex-1 items-center gap-2 text-[0.8125rem] font-semibold sm:text-base">
                 <span
                   className={isLightMode ? "text-[#8a6112]" : "text-gold"}
@@ -267,7 +297,7 @@ export function ReflectionReader({
           </div>
         </header>
 
-        <main className="mx-auto w-full max-w-5xl px-4 py-7 sm:px-6 sm:py-14 lg:px-8 lg:py-16">
+        <main className="mx-auto w-full max-w-5xl px-4 py-6 sm:px-6 sm:py-14 lg:px-8 lg:py-16">
           <div className="flex flex-wrap items-center gap-2 text-[0.9375rem] font-semibold leading-6">
             <span className={isLightMode ? "text-[#8a6112]" : "text-gold"}>
               Chapter {activeChapter.id}
@@ -359,9 +389,57 @@ export function ReflectionReader({
             </div>
           </article>
 
+          <section
+            aria-labelledby="continue-exploring-title"
+            className={clsx(
+              "mt-7 rounded-sm border p-4 sm:mt-9 sm:p-6",
+              isLightMode
+                ? "border-[#d8c9a7] bg-[#fffaf0]/70"
+                : "border-white/[0.08] bg-white/[0.025]"
+            )}
+          >
+            <h3
+              className={clsx(
+                "text-lg font-semibold tracking-[-0.015em]",
+                isLightMode ? "text-[#29313d]" : "text-ink"
+              )}
+              id="continue-exploring-title"
+            >
+              Continue exploring
+            </h3>
+            <div className="mt-4 grid gap-2 sm:grid-cols-3 sm:gap-3">
+              {relatedChapters.map((chapter) => (
+                <button
+                  className={clsx(
+                    "focus-ring group min-h-14 rounded-sm border px-3.5 py-3 text-left transition-colors duration-200",
+                    isLightMode
+                      ? "border-[#d2c29f] bg-[#fffaf0]/80 text-[#29313d] hover:border-[#a7761b] hover:bg-[#fff8e9]"
+                      : "border-white/[0.1] bg-black/20 text-ink/85 hover:border-gold/40 hover:bg-gold/[0.055]"
+                  )}
+                  data-related-reflection-id={chapter.id}
+                  key={chapter.id}
+                  onClick={() => onChangeChapter(chapter)}
+                  type="button"
+                >
+                  <span
+                    className={clsx(
+                      "block text-xs font-bold uppercase tracking-[0.1em]",
+                      isLightMode ? "text-[#8a6112]" : "text-gold"
+                    )}
+                  >
+                    Chapter {chapter.id}
+                  </span>
+                  <span className="mt-1.5 block text-sm font-semibold leading-5">
+                    {chapter.title}
+                  </span>
+                </button>
+              ))}
+            </div>
+          </section>
+
           <div
             className={clsx(
-              "mt-10 flex flex-col gap-3 border-t pt-7 sm:flex-row sm:items-center sm:justify-between",
+              "mt-8 flex flex-col gap-3 border-t pt-6 sm:mt-10 sm:flex-row sm:items-center sm:justify-between sm:pt-7",
               isLightMode ? "border-[#d7c7a4]" : "border-white/[0.08]"
             )}
           >
