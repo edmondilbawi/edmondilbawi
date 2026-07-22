@@ -193,7 +193,7 @@ export const translations = {
       eyebrow: "Selected Work",
       title: "Academic projects",
       subtitle:
-        "Two selected technical projects that reflect how I apply computer science concepts through structured project work.",
+        "A focused set of academic projects built to demonstrate practical software design, problem solving, and technical implementation.",
       preview: "Project structure preview",
       project: "Project",
       statuses: ["Academic Project", "Operating Systems Project"],
@@ -220,7 +220,7 @@ export const translations = {
       titleLead: "Let’s",
       titleAccent: "connect",
       text:
-        "Open to opportunities, collaborations, internships, and projects that allow me to keep learning, building, and contributing.",
+        "Open to internships, academic and professional opportunities, collaborations, and project discussions where I can keep learning, building, and contributing.",
       email: "Email",
       linkedin: "LinkedIn",
       openEmail: "Open Email",

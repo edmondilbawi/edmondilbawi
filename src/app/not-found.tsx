@@ -37,12 +37,14 @@ export default function NotFound() {
           <Link
             href="/"
             className="focus-ring inline-flex min-h-12 items-center justify-center rounded-lg border border-[#e0b133] bg-[#e0b133] px-6 py-3 text-sm font-semibold text-black transition hover:bg-[#f0c74f]"
+            prefetch={false}
           >
             Return to portfolio
           </Link>
           <Link
             href="/21-loaded"
             className="focus-ring inline-flex min-h-12 items-center justify-center rounded-lg border border-[#e0b133]/45 bg-black/35 px-6 py-3 text-sm font-semibold text-[#f1ca54] transition hover:border-[#e0b133] hover:bg-[#e0b133]/10"
+            prefetch={false}
           >
             Explore 21% Loaded
           </Link>

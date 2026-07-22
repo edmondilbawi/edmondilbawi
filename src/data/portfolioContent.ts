@@ -241,7 +241,7 @@ export const experienceEntries: ExperienceEntry[] = [
 ];
 
 export const contactText =
-  "Open to opportunities, collaborations, internships, and projects that allow me to keep learning, building, and contributing.";
+  "Open to internships, academic and professional opportunities, collaborations, and project discussions where I can keep learning, building, and contributing.";
 
 export const contactLinks = [
   {

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Download, MapPin, Terminal } from "lucide-react";
+import { ArrowRight, Download, MapPin, Terminal } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/Button";
 import { useV2Language } from "@/components/concept-v2/V2LanguageProvider";
@@ -370,7 +370,7 @@ export function V2HeroScene({ isReady = true }: V2HeroSceneProps) {
             animate={
               isReady ? { opacity: 1, y: 0 } : { opacity: 0, y: 14 }
             }
-            className="mt-5 sm:mt-7"
+            className="mt-5 flex flex-col gap-3 sm:mt-7 sm:flex-row sm:flex-wrap"
             initial={false}
             transition={itemTransition(0.4)}
           >
@@ -382,6 +382,14 @@ export function V2HeroScene({ isReady = true }: V2HeroSceneProps) {
               variant="secondary"
             >
               {t.hero.downloadCv}
+            </Button>
+            <Button
+              className="min-h-14 w-full border-gold/25 bg-transparent text-base sm:min-h-[4.1rem] sm:w-auto sm:min-w-[11.5rem]"
+              href="#v2-projects"
+              icon={<ArrowRight aria-hidden size={17} />}
+              variant="secondary"
+            >
+              {t.hero.viewProjects}
             </Button>
           </motion.div>
 
