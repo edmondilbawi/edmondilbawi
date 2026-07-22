@@ -22,7 +22,8 @@ export const translations = {
       firstName: "Edmond",
       lastName: "Ilbawi",
       fullName: "Edmond Ilbawi",
-      subtitle: "Computer Science Student | Still Loading",
+      subtitle:
+        "Computer Science student focused on analytical problem solving, decision making, and building practical software systems.",
       thesis:
         "A portfolio can show what I build. 21% Loaded shows the mindset behind the person building it.",
       explanation:
@@ -200,8 +201,8 @@ export const translations = {
       takeaways: "Key takeaways",
       source: "Source",
       sourceStates: [
-        "Source available on request",
-        "Source available on request"
+        "Collaborative academic project. Code walkthrough available on request.",
+        "View code on GitHub"
       ]
     },
     experience: {

@@ -1,6 +1,7 @@
 import {
   BriefcaseBusiness,
   Code2,
+  Github,
   Linkedin,
   Mail,
   ShieldCheck
@@ -18,9 +19,11 @@ export const navItems = [
 
 export const profile = {
   name: "Edmond Ilbawi",
-  subtitle: "Computer Science Student | Still Loading",
+  subtitle:
+    "Computer Science student focused on analytical problem solving, decision making, and building practical software systems.",
   email: "edmondilbawi@gmail.com",
   linkedinUrl: "https://www.linkedin.com/in/edmond-ilbawi-ba2788300",
+  githubUrl: "https://github.com/edmondilbawi"
 };
 
 export const aboutText =
@@ -104,6 +107,8 @@ export type Project = {
   description: string;
   techStack: string[];
   highlights: string[];
+  sourceNote?: string;
+  repositoryUrl?: string;
 };
 
 export const projects: Project[] = [
@@ -114,14 +119,15 @@ export const projects: Project[] = [
       kind: "social-platform"
     },
     description:
-      "A C++ data structures project modeling core social platform behavior such as users, posts, notifications, likes, comments, and messaging, with an emphasis on object oriented design and practical data structure choices.",
+      "Built a social platform in C++ using object-oriented design and custom data structures to manage users, posts, likes, comments, messaging, and notifications through modular components.",
     techStack: ["C++", "Object Oriented Programming", "Data Structures"],
     highlights: [
-      "Modeled social platform features using structured C++ components.",
-      "Applied data structures to represent users, posts, messages, notifications, and interactions.",
-      "Strengthened understanding of how abstract data structures support real application behavior.",
-      "Demonstrates academic and technical problem solving ability."
-    ]
+      "Modeled platform entities and interactions as structured C++ components.",
+      "Applied data structure choices to organize users, content, messages, notifications, and activity.",
+      "Practiced modular object-oriented design while translating abstract structures into application behavior."
+    ],
+    sourceNote:
+      "Collaborative academic project. Code walkthrough available on request."
   },
   {
     title: "Secure Multithreaded Banking System",
@@ -130,7 +136,7 @@ export const projects: Project[] = [
       kind: "banking-system"
     },
     description:
-      "A secure banking simulation built in C that demonstrates systems programming concepts including interprocess communication, multithreading, mutex synchronization, authentication, salted password hashing, and encrypted account storage.",
+      "Built a concurrent banking simulator in C using POSIX threads, named FIFOs, and per-account mutex synchronization to handle multiple client requests while protecting account operations from race conditions.",
     techStack: [
       "C",
       "POSIX Systems Programming",
@@ -141,11 +147,11 @@ export const projects: Project[] = [
       "Makefile"
     ],
     highlights: [
-      "Designed a client and server banking simulation focused on concurrency and account integrity.",
-      "Used synchronization concepts to prevent race conditions during account transactions.",
-      "Included authentication and encrypted storage concepts to strengthen security.",
-      "Demonstrates operating systems knowledge through practical implementation."
-    ]
+      "Used public and private named FIFOs with a worker thread per request for client-server communication.",
+      "Protected deposits, withdrawals, and transfers with per-account mutexes and ordered locking.",
+      "Implemented salted SHA-256 authentication and encrypted account balance storage with OpenSSL."
+    ],
+    repositoryUrl: "https://github.com/edmondilbawi/SMBS"
   }
 ];
 
@@ -165,15 +171,15 @@ export const experienceEntries: ExperienceEntry[] = [
   {
     organization: "UOB Developer Club",
     role: "Public Relations Officer",
-    dates: "August 2025 - June 2026",
+    dates: "August 2025 – June 2026",
     location: "Beirut Governorate, Lebanon",
     description:
-      "Representing the Developer Club by promoting its initiatives, strengthening engagement within the student community, and supporting communication between club members, students, and external audiences.",
+      "Represented the Developer Club by promoting its initiatives, strengthening engagement within the student community, and supporting communication between club members, students, and external audiences.",
     bullets: [
-      "Promote club initiatives and increase awareness of events and activities.",
-      "Support communication between members, students, and external audiences.",
-      "Contribute to organizing initiatives that encourage collaboration, innovation, and professional development.",
-      "Help foster an inclusive environment where students can learn, connect, and grow together."
+      "Promoted club initiatives and increased awareness of events and activities.",
+      "Supported communication between members, students, and external audiences.",
+      "Contributed to organizing initiatives that encouraged collaboration, innovation, and professional development.",
+      "Helped foster an inclusive environment where students could learn, connect, and grow together."
     ]
   },
   {
@@ -193,7 +199,7 @@ export const experienceEntries: ExperienceEntry[] = [
   {
     organization: "International School of Choueifat",
     role: "Head Prefect, Academic Department",
-    dates: "September 2023 - June 2024",
+    dates: "September 2022 – June 2023",
     location: "Damascus Governorate, Syria",
     description:
       "Led and supported students within the Academic Department while promoting a positive, collaborative learning environment.",
@@ -249,5 +255,11 @@ export const contactLinks = [
     value: "www.linkedin.com/in/edmond-ilbawi-ba2788300",
     href: profile.linkedinUrl,
     icon: Linkedin
+  },
+  {
+    label: "GitHub",
+    value: "github.com/edmondilbawi",
+    href: profile.githubUrl,
+    icon: Github
   }
 ];

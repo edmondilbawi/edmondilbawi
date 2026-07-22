@@ -46,12 +46,21 @@ export function V2ContactCommand() {
             </div>
 
             <div className="space-y-3">
-              {contactLinks.map((link, index) => {
+              {contactLinks.map((link) => {
                 const Icon = link.icon;
                 const isExternal = link.href.startsWith("http");
-                const label = index === 0 ? t.contact.email : t.contact.linkedin;
+                const label =
+                  link.label === "Email"
+                    ? t.contact.email
+                    : link.label === "LinkedIn"
+                      ? t.contact.linkedin
+                      : "GitHub";
                 const action =
-                  index === 0 ? t.contact.openEmail : t.contact.openLinkedin;
+                  link.label === "Email"
+                    ? t.contact.openEmail
+                    : link.label === "LinkedIn"
+                      ? t.contact.openLinkedin
+                      : "Open GitHub";
 
                 return (
                   <a

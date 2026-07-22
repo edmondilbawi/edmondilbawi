@@ -9,13 +9,13 @@ const featuredExperiences = [
   {
     organization: "UOB Developer Club",
     role: "Public Relations Officer",
-    dates: "August 2025 - June 2026",
+    dates: "August 2025 – June 2026",
     location: "Beirut Governorate, Lebanon",
     description:
-      "Representing the Developer Club by supporting communication, promoting initiatives, and strengthening student engagement.",
+      "Represented the Developer Club by supporting communication, promoting initiatives, and strengthening student engagement.",
     highlights: [
-      "Promote initiatives and raise event awareness.",
-      "Connect members, students, and external audiences."
+      "Promoted initiatives and raised event awareness.",
+      "Connected members, students, and external audiences."
     ]
   },
   {
@@ -33,7 +33,7 @@ const featuredExperiences = [
   {
     organization: "International School of Choueifat",
     role: "Head Prefect, Academic Department",
-    dates: "September 2023 - June 2024",
+    dates: "September 2022 – June 2023",
     location: "Damascus Governorate, Syria",
     description:
       "Led and supported students within the Academic Department while promoting a positive and collaborative learning environment.",

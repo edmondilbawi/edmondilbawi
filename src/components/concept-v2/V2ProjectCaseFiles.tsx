@@ -1,7 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Braces, CircleDot, Database, Network, ShieldCheck } from "lucide-react";
+import {
+  ArrowUpRight,
+  Braces,
+  CircleDot,
+  Database,
+  Github,
+  Network,
+  ShieldCheck
+} from "lucide-react";
 import { useV2Language } from "@/components/concept-v2/V2LanguageProvider";
 import { projects, type Project } from "@/data/portfolioContent";
 import { useHydratedReducedMotion } from "@/hooks/useHydratedReducedMotion";
@@ -188,15 +196,31 @@ export function V2ProjectCaseFiles() {
                   </div>
                 </div>
 
-                <div
-                  aria-disabled="true"
-                  className="mt-4 flex flex-wrap items-center justify-between gap-2 rounded-sm border border-dashed border-white/10 bg-black/20 px-3 py-2.5 font-mono text-[10px] uppercase tracking-[0.13em] text-muted sm:gap-4 sm:text-[9px] sm:tracking-[0.16em]"
-                >
-                  <span>{t.projects.source}</span>
-                  <span className="text-gold/75">
-                    {t.projects.sourceStates[index]}
-                  </span>
-                </div>
+                {project.repositoryUrl ? (
+                  <a
+                    aria-label={`View code for ${project.title} on GitHub`}
+                    className="focus-ring mt-4 flex min-h-12 items-center justify-between gap-4 rounded-sm border border-gold/30 bg-gold/[0.055] px-4 py-3 font-mono text-[10px] font-bold uppercase tracking-[0.14em] text-gold transition-all duration-200 hover:-translate-y-0.5 hover:border-gold/60 hover:bg-gold/[0.1] hover:text-ink hover:shadow-gold-soft"
+                    href={project.repositoryUrl}
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    <span className="flex items-center gap-2">
+                      <Github aria-hidden size={15} />
+                      View Code
+                    </span>
+                    <ArrowUpRight aria-hidden size={15} />
+                  </a>
+                ) : (
+                  <div
+                    aria-disabled="true"
+                    className="mt-4 flex flex-wrap items-center justify-between gap-2 rounded-sm border border-dashed border-white/10 bg-black/20 px-3 py-2.5 font-mono text-[10px] uppercase tracking-[0.13em] text-muted sm:gap-4 sm:text-[9px] sm:tracking-[0.16em]"
+                  >
+                    <span>{t.projects.source}</span>
+                    <span className="text-gold/75">
+                      {project.sourceNote ?? t.projects.sourceStates[index]}
+                    </span>
+                  </div>
+                )}
               </div>
             </motion.article>
           ))}

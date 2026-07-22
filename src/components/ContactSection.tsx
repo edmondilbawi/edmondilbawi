@@ -27,7 +27,7 @@ export function ContactSection() {
           whileInView={{ opacity: 1, y: 0 }}
         >
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_110%,rgba(212,175,55,0.1),transparent_42%)]" />
-          <div className="relative grid gap-3 sm:grid-cols-2">
+          <div className="relative grid gap-3 sm:grid-cols-3">
             {contactLinks.map((item, index) => {
               const Icon = item.icon;
 

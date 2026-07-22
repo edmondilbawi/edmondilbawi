@@ -350,9 +350,19 @@ export function V2HeroScene({ isReady = true }: V2HeroSceneProps) {
             animate={
               isReady ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }
             }
-            className="mt-5 max-w-[28rem] text-base leading-7 text-muted sm:mt-9 sm:text-lg sm:leading-8 lg:text-xl lg:leading-9"
+            className="mt-5 max-w-[37rem] text-sm font-medium leading-6 text-ink/85 sm:mt-8 sm:text-base sm:leading-7 lg:text-lg"
             initial={false}
             transition={itemTransition(0.28)}
+          >
+            {t.hero.subtitle}
+          </motion.p>
+          <motion.p
+            animate={
+              isReady ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }
+            }
+            className="mt-3 max-w-[28rem] text-base leading-7 text-muted sm:mt-5 sm:text-lg sm:leading-8 lg:text-xl lg:leading-9"
+            initial={false}
+            transition={itemTransition(0.34)}
           >
             {t.hero.thesis}
           </motion.p>

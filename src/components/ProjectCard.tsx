@@ -3,6 +3,8 @@
 import {
   Bell,
   Code2,
+  ExternalLink,
+  Github,
   Heart,
   Lock,
   MessageCircle,
@@ -229,6 +231,24 @@ export function ProjectCard({ index, project }: ProjectCardProps) {
             </span>
           ))}
         </div>
+
+        {project.repositoryUrl ? (
+          <a
+            aria-label={`View code for ${project.title} on GitHub`}
+            className="focus-ring mt-6 inline-flex min-h-12 w-fit items-center gap-2 rounded-md border border-gold/30 bg-gold/[0.07] px-4 py-3 text-sm font-semibold text-gold transition-all duration-200 hover:-translate-y-0.5 hover:border-gold/60 hover:bg-gold/[0.12] hover:text-ink hover:shadow-gold-soft"
+            href={project.repositoryUrl}
+            rel="noreferrer"
+            target="_blank"
+          >
+            <Github aria-hidden size={17} />
+            View Code
+            <ExternalLink aria-hidden size={15} />
+          </a>
+        ) : project.sourceNote ? (
+          <p className="mt-6 border-t border-white/[0.08] pt-4 text-sm leading-6 text-muted">
+            {project.sourceNote}
+          </p>
+        ) : null}
 
       </div>
     </article>
