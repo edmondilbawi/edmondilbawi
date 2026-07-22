@@ -227,7 +227,7 @@ export const translations = {
       openLinkedin: "Open LinkedIn",
       footerLead: "Built around one idea:",
       footerAccent: "still loading.",
-      copyright: "© 2026 Edmond Ilbawi. All rights reserved."
+      copyright: "© {year} Edmond Ilbawi. All rights reserved."
     },
     library: {
       ariaLabel: "21% Loaded library",
@@ -498,7 +498,7 @@ export const translations = {
       openLinkedin: "فتح لينكدإن",
       footerLead: "مبني حول فكرة واحدة:",
       footerAccent: "لا يزال قيد التحميل.",
-      copyright: "© 2026 إدموند إلباوي. جميع الحقوق محفوظة."
+      copyright: "© {year} إدموند إلباوي. جميع الحقوق محفوظة."
     },
     library: {
       ariaLabel: "مكتبة \u2066٢١٪\u2069 محمّل",

@@ -5,6 +5,7 @@ import { AmbientExperience } from "@/components/AmbientExperience";
 import { AboutSection } from "@/components/AboutSection";
 import { BeyondPortfolioBridge } from "@/components/BeyondPortfolioBridge";
 import { ContactSection } from "@/components/ContactSection";
+import { DynamicCopyright } from "@/components/DynamicCopyright";
 import { CVSection } from "@/components/CVSection";
 import { Hero } from "@/components/Hero";
 import { Navbar } from "@/components/Navbar";
@@ -65,7 +66,11 @@ export function PortfolioPageClient() {
           <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-gold/80">
             Version 21 / System active
           </p>
-          <p>© 2026 Edmond Ilbawi. All rights reserved.</p>
+          <p>
+            <DynamicCopyright
+              template="© {year} Edmond Ilbawi. All rights reserved."
+            />
+          </p>
         </div>
       </footer>
 

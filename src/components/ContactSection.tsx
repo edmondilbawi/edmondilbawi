@@ -60,7 +60,7 @@ export function ContactSection() {
                     {item.value}
                   </p>
                   <a
-                    className="focus-ring mt-4 inline-flex rounded-md text-sm font-semibold text-gold underline-offset-4 transition-all duration-200 hover:translate-x-0.5 hover:text-ink hover:underline"
+                    className="focus-ring mt-3 inline-flex min-h-11 items-center rounded-md text-sm font-semibold text-gold underline-offset-4 transition-all duration-200 hover:translate-x-0.5 hover:text-ink hover:underline"
                     href={item.href}
                     rel={item.href.startsWith("http") ? "noreferrer" : undefined}
                     target={item.href.startsWith("http") ? "_blank" : undefined}

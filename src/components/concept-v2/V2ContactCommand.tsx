@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, Command } from "lucide-react";
 import { useV2Language } from "@/components/concept-v2/V2LanguageProvider";
+import { DynamicCopyright } from "@/components/DynamicCopyright";
 import { contactLinks } from "@/data/portfolioContent";
 import { useHydratedReducedMotion } from "@/hooks/useHydratedReducedMotion";
 
@@ -104,7 +105,9 @@ export function V2ContactCommand() {
             {t.contact.footerLead}{" "}
             <span className="text-gold">{t.contact.footerAccent}</span>
           </p>
-          <p>{t.contact.copyright}</p>
+          <p>
+            <DynamicCopyright template={t.contact.copyright} />
+          </p>
         </footer>
       </div>
     </section>
