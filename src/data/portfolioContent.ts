@@ -137,7 +137,7 @@ export const projects: Project[] = [
       "Protected sensitive operations with sessions, CSRF controls, authorization, throttling, and automated tests."
     ],
     scopeNote:
-      "Academic software engineering showcase for local review; not intended for real emergency or clinical use.",
+      "Academic software engineering showcase for local review.",
     repositoryUrl:
       "https://github.com/edmondilbawi/BloodLink/tree/express-web-version"
   },
