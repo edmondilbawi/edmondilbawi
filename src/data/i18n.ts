@@ -191,12 +191,16 @@ export const translations = {
     },
     projects: {
       eyebrow: "Selected Work",
-      title: "Academic projects",
+      title: "Academic software projects",
       subtitle:
-        "A focused set of academic projects built to demonstrate practical software design, problem solving, and technical implementation.",
+        "A focused set of academic software projects demonstrating full-stack development, systems programming, web security, concurrency, and applied data structures.",
       preview: "Project structure preview",
       project: "Project",
-      statuses: ["Academic Project", "Operating Systems Project"],
+      statuses: [
+        "Featured Full-Stack Project",
+        "Operating Systems Project",
+        "Academic Project"
+      ],
       technologies: "Technologies",
       takeaways: "Key takeaways",
       source: "Source",
@@ -465,12 +469,16 @@ export const translations = {
     },
     projects: {
       eyebrow: "أعمال مختارة",
-      title: "مشاريع أكاديمية",
+      title: "مشاريع برمجية أكاديمية",
       subtitle:
-        "مشروعان تقنيان مختاران يعكسان كيف أطبّق مفاهيم علوم الحاسوب من خلال عمل منظّم قائم على المشاريع.",
+        "مجموعة مركّزة من المشاريع الأكاديمية التي تعرض تطوير الويب المتكامل وبرمجة الأنظمة وأمن الويب والتزامن وهياكل البيانات التطبيقية.",
       preview: "معاينة هيكل المشروع",
       project: "المشروع",
-      statuses: ["مشروع أكاديمي", "مشروع أنظمة تشغيل"],
+      statuses: [
+        "مشروع ويب متكامل مميّز",
+        "مشروع أنظمة تشغيل",
+        "مشروع أكاديمي"
+      ],
       technologies: "التقنيات",
       takeaways: "أبرز ما تعلّمته",
       source: "المصدر",

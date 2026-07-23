@@ -17,12 +17,12 @@ export function ProjectsSection() {
         <SectionHeading
           eyebrow="SELECTED WORK"
           index="03"
-          status="2 case studies loaded"
-          title="Academic projects"
-          description="Two selected technical projects that reflect how I apply computer science concepts through structured project work."
+          status="3 case studies loaded"
+          title="Academic software projects"
+          description="A focused set of academic software projects demonstrating full-stack development, systems programming, web security, concurrency, and applied data structures."
         />
 
-        <div className="mt-12 grid gap-5 lg:grid-cols-2">
+        <div className="mt-12 grid gap-5 lg:grid-cols-3">
           {projects.map((project, index) => (
             <motion.div
               initial={{ opacity: 0, y: 18 }}

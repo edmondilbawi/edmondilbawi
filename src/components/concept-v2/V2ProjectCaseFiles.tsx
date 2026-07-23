@@ -6,6 +6,7 @@ import {
   Braces,
   CircleDot,
   Database,
+  Droplets,
   Github,
   Network,
   ShieldCheck
@@ -15,6 +16,7 @@ import { projects, type Project } from "@/data/portfolioContent";
 import { useHydratedReducedMotion } from "@/hooks/useHydratedReducedMotion";
 
 function SystemPreview({ project }: { project: Project }) {
+  const isBloodLink = project.preview.kind === "bloodlink";
   const isBankingSystem = project.preview.kind === "banking-system";
   const { t } = useV2Language();
 
@@ -27,7 +29,28 @@ function SystemPreview({ project }: { project: Project }) {
       <div className="absolute inset-0 bg-subtle-grid bg-[length:30px_30px] opacity-[0.13]" />
       <div className="project-scan absolute inset-x-0 top-0 h-px bg-gold/60" />
 
-      {isBankingSystem ? (
+      {isBloodLink ? (
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="relative grid h-32 w-32 place-items-center rounded-full border border-gold/30">
+            <div className="grid h-24 w-24 place-items-center rounded-full border border-gold/55 bg-gold/[0.06] text-gold shadow-gold-soft">
+              <Droplets aria-hidden size={34} />
+            </div>
+            {[
+              ["-left-16 top-2", "RBAC"],
+              ["-right-16 top-2", "CSRF"],
+              ["-left-16 bottom-2", "ABO/Rh"],
+              ["-right-16 bottom-2", "PG"]
+            ].map(([position, label]) => (
+              <span
+                className={`absolute grid h-10 min-w-10 place-items-center rounded-sm border border-white/10 bg-panel px-2 font-mono text-[9px] text-gold/80 ${position}`}
+                key={label}
+              >
+                {label}
+              </span>
+            ))}
+          </div>
+        </div>
+      ) : isBankingSystem ? (
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="relative grid h-32 w-32 place-items-center rounded-full border border-gold/30">
             <div className="grid h-24 w-24 place-items-center rounded-full border border-gold/55 bg-gold/[0.06] text-gold shadow-gold-soft">
@@ -114,7 +137,7 @@ export function V2ProjectCaseFiles() {
           </p>
         </header>
 
-        <div className="mt-7 grid gap-4 sm:mt-10 sm:gap-5 lg:grid-cols-2">
+        <div className="mt-7 grid gap-4 sm:mt-10 sm:gap-5 lg:grid-cols-3">
           {projects.map((project, index) => (
             <motion.article
               className="v2-panel-surface group overflow-hidden rounded-sm transition-all duration-200 hover:-translate-y-1 hover:border-gold/35 hover:shadow-gold-soft"
@@ -154,7 +177,17 @@ export function V2ProjectCaseFiles() {
                   {project.description}
                 </p>
 
-                <div className="mt-4 grid gap-4 border-y border-line py-4 sm:mt-5 sm:gap-5 sm:py-5 md:grid-cols-[0.72fr_1.28fr]">
+                {project.scopeNote ? (
+                  <p
+                    className="mt-4 border-l border-gold/35 pl-3 text-left text-sm leading-6 text-muted"
+                    dir="ltr"
+                    lang="en"
+                  >
+                    {project.scopeNote}
+                  </p>
+                ) : null}
+
+                <div className="mt-4 grid gap-4 border-y border-line py-4 sm:mt-5 sm:gap-5 sm:py-5">
                   <div>
                     <p className="font-mono text-[9px] font-bold uppercase tracking-[0.2em] text-gold">
                       {t.projects.technologies}

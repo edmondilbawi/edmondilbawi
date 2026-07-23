@@ -3,6 +3,8 @@
 import {
   Bell,
   Code2,
+  Database,
+  Droplets,
   ExternalLink,
   Github,
   Heart,
@@ -112,6 +114,54 @@ function SocialPlatformPreview() {
   );
 }
 
+function BloodLinkPreview() {
+  const workflow = [
+    { icon: UsersRound, label: "registration" },
+    { icon: ShieldCheck, label: "eligibility" },
+    { icon: Code2, label: "compatibility" },
+    { icon: Database, label: "inventory" }
+  ];
+
+  return (
+    <PreviewShell label="Preview of the BloodLink hospital coordination workflow">
+      <div className="flex items-center justify-between gap-3">
+        <div>
+          <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">
+            <Droplets aria-hidden size={15} />
+            BloodLink Workflow
+          </p>
+          <p className="mt-1 font-mono text-xs text-muted">
+            Express / EJS / PostgreSQL
+          </p>
+        </div>
+        <div className="rounded-full border border-gold/25 bg-gold/[0.08] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-gold">
+          RBAC
+        </div>
+      </div>
+
+      <div className="mt-5 grid grid-cols-2 gap-2.5">
+        {workflow.map(({ icon: Icon, label }) => (
+          <div
+            className="flex items-center gap-2 rounded-md border border-white/10 bg-white/[0.045] px-3 py-2.5"
+            key={label}
+          >
+            <Icon
+              aria-hidden
+              className="text-gold transition-all duration-200 group-hover:scale-110 group-hover:drop-shadow-[0_0_8px_rgba(212,175,55,0.45)]"
+              size={15}
+            />
+            <span className="font-mono text-[11px] text-muted">{label}</span>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-4 rounded-md border border-gold/20 bg-gold/[0.055] px-3 py-2 font-mono text-[11px] leading-5 text-muted">
+        request -&gt; verify -&gt; match -&gt; prepare outreach
+      </div>
+    </PreviewShell>
+  );
+}
+
 function BankingSystemPreview() {
   const flow = ["client FIFO", "server thread", "account mutex", "encrypted file"];
 
@@ -185,6 +235,10 @@ function BankingSystemPreview() {
 }
 
 function ProjectPreview({ project }: Pick<ProjectCardProps, "project">) {
+  if (project.preview.kind === "bloodlink") {
+    return <BloodLinkPreview />;
+  }
+
   if (project.preview.kind === "banking-system") {
     return <BankingSystemPreview />;
   }
@@ -231,6 +285,12 @@ export function ProjectCard({ index, project }: ProjectCardProps) {
             </span>
           ))}
         </div>
+
+        {project.scopeNote ? (
+          <p className="mt-5 border-l border-gold/40 pl-3 text-sm leading-6 text-muted">
+            {project.scopeNote}
+          </p>
+        ) : null}
 
         {project.repositoryUrl ? (
           <a

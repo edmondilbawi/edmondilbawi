@@ -102,35 +102,47 @@ export type Project = {
   title: string;
   status: string;
   preview: {
-    kind: "social-platform" | "banking-system";
+    kind: "bloodlink" | "social-platform" | "banking-system";
   };
   description: string;
   techStack: string[];
   highlights: string[];
+  scopeNote?: string;
   sourceNote?: string;
   repositoryUrl?: string;
 };
 
 export const projects: Project[] = [
   {
-    title: "Advanced Data Structures Social Platform",
-    status: "Academic Project",
+    title: "BloodLink",
+    status: "Featured Full-Stack Project",
     preview: {
-      kind: "social-platform"
+      kind: "bloodlink"
     },
     description:
-      "Built a social platform in C++ using object-oriented design and custom data structures to manage users, posts, likes, comments, messaging, and notifications through modular components.",
-    techStack: ["C++", "Object Oriented Programming", "Data Structures"],
-    highlights: [
-      "Modeled platform entities and interactions as structured C++ components.",
-      "Applied data structure choices to organize users, content, messages, notifications, and activity.",
-      "Practiced modular object-oriented design while translating abstract structures into application behavior."
+      "Role-based hospital blood donation and donor outreach platform with PostgreSQL-backed workflows for registration, donor eligibility, blood compatibility, inventory management, emergency requests, and protected administration.",
+    techStack: [
+      "Node.js",
+      "Express",
+      "EJS",
+      "PostgreSQL",
+      "Bootstrap",
+      "RBAC",
+      "Web Security",
+      "Automated Testing"
     ],
-    sourceNote:
-      "Collaborative academic project. Code walkthrough available on request."
+    highlights: [
+      "Built role-specific registration, donor, patient, and administrator workflows.",
+      "Applied donor eligibility checks and complete ABO/Rh compatibility matching.",
+      "Protected sensitive operations with sessions, CSRF controls, authorization, throttling, and automated tests."
+    ],
+    scopeNote:
+      "Academic software engineering showcase for local review; not intended for real emergency or clinical use.",
+    repositoryUrl:
+      "https://github.com/edmondilbawi/BloodLink/tree/express-web-version"
   },
   {
-    title: "Secure Multithreaded Banking System",
+    title: "Secure Multi threaded Banking System",
     status: "Operating Systems Project",
     preview: {
       kind: "banking-system"
@@ -152,6 +164,23 @@ export const projects: Project[] = [
       "Implemented salted SHA-256 authentication and encrypted account balance storage with OpenSSL."
     ],
     repositoryUrl: "https://github.com/edmondilbawi/SMBS"
+  },
+  {
+    title: "Advanced Data Structures Social Platform",
+    status: "Academic Project",
+    preview: {
+      kind: "social-platform"
+    },
+    description:
+      "Built a social platform in C++ using object-oriented design and custom data structures to manage users, posts, likes, comments, messaging, and notifications through modular components.",
+    techStack: ["C++", "Object Oriented Programming", "Data Structures"],
+    highlights: [
+      "Modeled platform entities and interactions as structured C++ components.",
+      "Applied data structure choices to organize users, content, messages, notifications, and activity.",
+      "Practiced modular object-oriented design while translating abstract structures into application behavior."
+    ],
+    sourceNote:
+      "Collaborative academic project. Code walkthrough available on request."
   }
 ];
 
