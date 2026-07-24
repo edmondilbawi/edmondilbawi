@@ -8,6 +8,12 @@ import {
   siteOpenGraphImage,
   siteRouteUrl
 } from "@/data/siteMetadata";
+import { homepageStructuredData } from "@/data/structuredData";
+
+const serializedStructuredData = JSON.stringify(homepageStructuredData).replace(
+  /</g,
+  "\\u003c"
+);
 
 export const metadata: Metadata = {
   title: SITE_TITLE,
@@ -32,5 +38,14 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  return <ConceptV2Page />;
+  return (
+    <>
+      <script
+        dangerouslySetInnerHTML={{ __html: serializedStructuredData }}
+        id="portfolio-structured-data"
+        type="application/ld+json"
+      />
+      <ConceptV2Page />
+    </>
+  );
 }
