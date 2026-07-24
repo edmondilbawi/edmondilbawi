@@ -25,4 +25,6 @@ The workflow at `.github/workflows/deploy.yml` builds the site and publishes the
 
 The portfolio is published at `https://edmondilbawi.com/`. The static export uses root paths and includes `public/CNAME` for the custom domain.
 
+Custom-domain updates are published through the same GitHub Pages deployment workflow.
+
 No deployment is performed by the local build command.
