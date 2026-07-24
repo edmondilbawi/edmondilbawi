@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://edmondilbawi.github.io/edmondilbawi/sitemap.xml
+Sitemap: https://edmondilbawi.com/sitemap.xml

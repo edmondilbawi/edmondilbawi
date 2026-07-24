@@ -1,6 +1,5 @@
-export const SITE_ORIGIN = "https://edmondilbawi.github.io";
-export const SITE_BASE_PATH = "/edmondilbawi";
-export const SITE_URL = `${SITE_ORIGIN}${SITE_BASE_PATH}`;
+export const SITE_ORIGIN = "https://edmondilbawi.com";
+export const SITE_URL = SITE_ORIGIN;
 
 export const SITE_TITLE = "Edmond Ilbawi | Computer Science Portfolio";
 export const SITE_DESCRIPTION =
